@@ -1,0 +1,113 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<h1>Loπery.pi</h1>
+
+<h4>Join our weekly draw for just 1π!</h4>
+
+  <button class="button_click">Play!</button>
+  
+<div id="form" style="display: none;">
+  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSenxSS6P0QODzBkxLaw_pmDwN56je0p41M-p-XvnyKxnkklJQ/viewform?embedded=true" width="100%" height="800">Loading…</iframe>
+  </div>
+  
+	<script type="text/javascript">
+		function playLottery() {
+        document.getElementById("form").style.display = "block";
+        alert("You've entered! Please fill in this form to complete your submission!");
+      }
+
+//Frontend Pi SDK
+     $( document ).ready(function() {
+       const Pi = window.Pi;
+       Pi.init({ version: "2.0" });
+
+async function auth() {
+try {
+const scopes = ['username', 'payments'];
+function onIncompletePaymentFound(payment) {
+
+var data = {
+'action': 'complete',
+'paymentId': payment.identifier,
+'txid': payment.transaction.txid,
+'app_client': 'auth_example'
+};
+return $.post( "SERVER_URL", data).done(function(data) {
+$(".button_click").prop( "disabled", false );
+}).fail(function() {
+$(".button_click").prop( "disabled", false );
+});
+}; // Read more about this in the SDK reference
+
+Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
+document.getElementById('username').innerHTML = auth.user.username;
+
+//alert('Hello ' + auth.user.username);
+}).catch(function(error) {
+console.error(error);
+});
+} catch (err) {
+alert(err);
+// Not able to fetch the user
+}
+}
+
+async function transfer() {
+try {
+const payment = Pi.createPayment({
+// Amount of π to be paid:
+amount: 1,
+// An explanation of the payment - will be shown to the user:
+memo: "Unlock Webinar", // e.g: "Digital kitten #1234",
+// An arbitrary developer-provided metadata object - for your own usage:
+metadata: { paymentType: "donation" }, // e.g: { kittenId: 1234 }
+}, {
+// Callbacks you need to implement - read more about those in the detailed docs linked below:
+onReadyForServerApproval: function(paymentId) {
+var data = {
+'action': 'approve',
+'paymentId': paymentId,
+'txid': '',
+'app_client': 'auth_example'
+};
+return $.post( "SERVER_URL", data).done(function(data) {
+$(".button_click").prop( "disabled", false );
+}).fail(function() {
+$(".button_click").prop( "disabled", false );
+});
+},
+onReadyForServerCompletion: function(paymentId, txid) {
+var data = {
+'action': 'complete',
+'paymentId': paymentId,
+"txid": txid,
+'app_client': 'auth_example'
+};
+playLottery();
+return $.post( "SERVER_URL", data).done(function(data) {
+$(".button_click").prop( "disabled", false );
+}).fail(function() {
+$(".button_click").prop( "disabled", false );
+});
+},
+onCancel: function(paymentId) { $(".button_click").prop( "disabled", false ); },
+onError: function(error, payment) { $(".button_click").prop( "disabled", false ); },
+});
+} catch(err) {
+$(".button_click").prop( "disabled", false );
+alert(err);
+// Technical problem (eg network failure). Please try again
+}
+}
+
+auth();
+
+}); 
+	</script>
+</body>
+
+</html>
