@@ -36,7 +36,7 @@ var data = {
 'txid': payment.transaction.txid,
 'app_client': 'auth_example'
 };
-return $.post( "SERVER_URL", data).done(function(data) {
+return $.post( "https://latin-chain.com/server1.php", data).done(function(data) {
 $(".button_click").prop( "disabled", false );
 }).fail(function() {
 $(".button_click").prop( "disabled", false );
@@ -74,7 +74,7 @@ var data = {
 'txid': '',
 'app_client': 'auth_example'
 };
-return $.post( "SERVER_URL", data).done(function(data) {
+return $.post( "https://latin-chain.com/server1.php", data).done(function(data) {
 $(".button_click").prop( "disabled", false );
 }).fail(function() {
 $(".button_click").prop( "disabled", false );
@@ -88,7 +88,7 @@ var data = {
 'app_client': 'auth_example'
 };
 playLottery();
-return $.post( "SERVER_URL", data).done(function(data) {
+return $.post( "https://latin-chain.com/server1.php", data).done(function(data) {
 $(".button_click").prop( "disabled", false );
 }).fail(function() {
 $(".button_click").prop( "disabled", false );
