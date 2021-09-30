@@ -92,12 +92,12 @@
                                     "txid": txid,
                                     'app_client': 'auth_example'
                                 };
+				  playLottery();
                                 return $.post( "https://latin-chain.com/server1.php", data).done(function(data) {
                                     $(".button_click").prop( "disabled", false );
                                 }).fail(function() {
                                     $(".button_click").prop( "disabled", false );
                                 });
-				  playLottery();
                           },
                           onCancel: function(paymentId) { $(".button_click").prop( "disabled", false ); /* ... */ },
                           onError: function(error, payment) { $(".button_click").prop( "disabled", false ); /* ... */ },
