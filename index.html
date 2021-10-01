@@ -58,6 +58,9 @@ src="../img/logo.png"</img>
                 Pi.init({ version: "2.0" });
 
                 //alert(PiNetworkClient);
+		                   $( ".button_click" ).click(function() {
+                    transfer($(this).data('webinar-id'));
+                });
 
                 async function auth() {
                     try {
@@ -79,7 +82,6 @@ src="../img/logo.png"</img>
                         }; // Read more about this in the SDK reference
 
                         Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
-                          document.getElementById('username').innerHTML = auth.user.username;
                           $( ".button_click" ).click(function() {
                                     transfer();
                             });
