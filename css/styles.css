@@ -15,12 +15,17 @@ iframe {
   margin-top: 10px;
 }
 button {
-  margin-bottom: 50px;
+  margin-bottom: 20px;
   background-color: #FCB44B;
   color: #642A82;
-  padding: 20px 80px;
+  padding: 20px 60px;
   font-size: 25px;
   font-weight: bold;
+}
+.border {
+  border-style: solid;
+  border-color: #642A82;
+  margin-bottom: 50px;
 }
 .flier {
 	pointer-events: none;
