@@ -1,6 +1,6 @@
 body {
   text-align: center;
-  background: #fff59b;
+  background: #F1E5AC;
   color: #642A82;
 }
 img {
@@ -15,10 +15,299 @@ iframe {
   margin-top: 10px;
 }
 button {
-  margin-bottom: 20px;
+  margin-bottom: 50px;
   background-color: #FCB44B;
   color: #642A82;
-  padding: 0px 30px;
-  font-size: 15px;
+  padding: 20px 80px;
+  font-size: 25px;
   font-weight: bold;
+}
+.flier {
+	pointer-events: none;
+}
+
+.flier > * {
+/* Adjust animation duration to change the element’s speed */
+        animation: fly1 50s linear infinite;
+        pointer-events: none !important;
+	top: 0;
+	left: 0;
+	transform: translateX(-120%) translateY(-120%) rotateZ(0);
+	position: fixed;
+	animation-delay: 1s;
+	z-index: 999999;
+}
+
+ /* Keyframe values control where the element will begin
+    and end its trajectory across the screen. Each rule
+    represents a path the element follows across the screen. */
+
+
+@keyframes fly1 {
+
+	98.001%, 0% {
+                display: block;
+    width: 100px;
+		transform: translateX(-200%) translateY(-134vh) rotateZ(0deg)
+	}
+
+	30% {
+		transform: translateX(10vw) translateY(-83%) rotateZ(180deg)
+	}
+
+	15.001%, 20% {
+		transform: translateX(100vw) translateY(-50%) rotateZ(0deg)
+	}
+
+	80% {
+		transform: translateX(-200%) translateY(11vh) rotateZ(-180deg)
+	}
+
+	40.001%, 43% {
+		transform: translateX(-200%) translateY(-100%) rotateZ(-180deg)
+	}
+
+	65% {
+		transform: translateX(100vw) translateY(50vh) rotateZ(0deg)
+	}
+
+	65.001%, 68% {
+		transform: translateX(20vw) translateY(-200%) rotateZ(180deg)
+	}
+
+	95% {
+		transform: translateX(10vw) translateY(100vh) rotateZ(0deg)
+	}
+}
+.flier2 {
+	pointer-events: none;
+  width: 10px;
+}
+
+.flier2 > * {
+/* Adjust animation duration to change the element’s speed */
+        animation: fly2 50s linear infinite;
+        pointer-events: none !important;
+	top: 0;
+	left: 0;
+	transform: translateX(-120%) translateY(-120%) rotateZ(0);
+	position: fixed;
+	animation-delay: 5s;
+	z-index: 100;
+}
+
+ /* Keyframe values control where the element will begin
+    and end its trajectory across the screen. Each rule
+    represents a path the element follows across the screen. */
+
+
+@keyframes fly2 {
+
+	98.001%, 0% {
+                display: block;
+    width: 100px;
+		transform: translateX(-200%) translateY(100vh) rotateZ(0deg)
+	}
+
+	15% {
+		transform: translateX(100vw) translateY(-100%) rotateZ(180deg)
+	}
+
+	15.001%, 18% {
+		transform: translateX(100vw) translateY(-30%) rotateZ(0deg)
+	}
+
+	40% {
+		transform: translateX(-200%) translateY(3vh) rotateZ(-180deg)
+	}
+
+	40.001%, 43% {
+		transform: translateX(-200%) translateY(-100%) rotateZ(-180deg)
+	}
+
+	65% {
+		transform: translateX(100vw) translateY(50vh) rotateZ(0deg)
+	}
+
+	65.001%, 68% {
+		transform: translateX(20vw) translateY(-200%) rotateZ(180deg)
+	}
+
+	95% {
+		transform: translateX(10vw) translateY(100vh) rotateZ(0deg)
+	}
+}
+.flier3 {
+	pointer-events: none;
+  width: 10px;
+}
+
+.flier3 > * {
+/* Adjust animation duration to change the element’s speed */
+        animation: fly3 50s linear infinite;
+        pointer-events: none !important;
+	top: 0;
+	left: 0;
+	transform: translateX(-120%) translateY(-120%) rotateZ(0);
+	position: fixed;
+	animation-delay: 19s;
+	z-index: 100;
+}
+
+ /* Keyframe values control where the element will begin
+    and end its trajectory across the screen. Each rule
+    represents a path the element follows across the screen. */
+
+
+@keyframes fly3 {
+
+	98.001%, 0% {
+                display: block;
+    width: 100px;
+		transform: translateX(-200%) translateY(100vh) rotateZ(0deg)
+	}
+
+	15% {
+		transform: translateX(100vw) translateY(-100%) rotateZ(180deg)
+	}
+
+	15.001%, 18% {
+		transform: translateX(100vw) translateY(-30%) rotateZ(0deg)
+	}
+
+	40% {
+		transform: translateX(-200%) translateY(3vh) rotateZ(-180deg)
+	}
+
+	40.001%, 43% {
+		transform: translateX(-200%) translateY(-100%) rotateZ(-180deg)
+	}
+
+	65% {
+		transform: translateX(100vw) translateY(50vh) rotateZ(0deg)
+	}
+
+	65.001%, 68% {
+		transform: translateX(20vw) translateY(-200%) rotateZ(180deg)
+	}
+
+	95% {
+		transform: translateX(10vw) translateY(100vh) rotateZ(0deg)
+	}
+}
+.flier4 {
+	pointer-events: none;
+  width: 10px;
+}
+
+.flier4 > * {
+/* Adjust animation duration to change the element’s speed */
+        animation: fly4 50s linear infinite;
+        pointer-events: none !important;
+	top: 0;
+	left: 0;
+	transform: translateX(-120%) translateY(-120%) rotateZ(0);
+	position: fixed;
+	animation-delay: 12s;
+	z-index: 100;
+}
+
+ /* Keyframe values control where the element will begin
+    and end its trajectory across the screen. Each rule
+    represents a path the element follows across the screen. */
+
+
+@keyframes fly4 {
+
+	98.001%, 0% {
+                display: block;
+    width: 100px;
+		transform: translateX(-200%) translateY(10vh) rotateZ(0deg)
+	}
+
+	15% {
+		transform: translateX(100vw) translateY(2300%) rotateZ(180deg)
+	}
+
+	15.001%, 18% {
+		transform: translateX(100vw) translateY(-34%) rotateZ(0deg)
+	}
+
+	40% {
+		transform: translateX(-200%) translateY(32vh) rotateZ(-180deg)
+	}
+
+	40.001%, 43% {
+		transform: translateX(-200%) translateY(-42%) rotateZ(-180deg)
+	}
+
+	65% {
+		transform: translateX(100vw) translateY(-26vh) rotateZ(0deg)
+	}
+
+	65.001%, 68% {
+		transform: translateX(20vw) translateY(-200%) rotateZ(180deg)
+	}
+
+	95% {
+		transform: translateX(10vw) translateY(100vh) rotateZ(0deg)
+	}
+}
+.flierpie {
+	pointer-events: none;
+  width: 10px;
+}
+
+.flierpie > * {
+/* Adjust animation duration to change the element’s speed */
+        animation: flypie 50s linear;
+        pointer-events: none !important;
+	top: 0;
+	left: 0;
+	transform: translateX(-120%) translateY(-120%) rotateZ(0);
+	position: fixed;
+	animation-delay: 15s;
+	z-index: 100;
+}
+
+ /* Keyframe values control where the element will begin
+    and end its trajectory across the screen. Each rule
+    represents a path the element follows across the screen. */
+
+
+@keyframes flypie {
+
+	98.001%, 0% {
+                display: block;
+    width: 100px;
+		transform: translateX(-200%) translateY(100vh) rotateZ(0deg)
+	}
+
+	15% {
+		transform: translateX(100vw) translateY(-100%) rotateZ(180deg)
+	}
+
+	15.001%, 18% {
+		transform: translateX(100vw) translateY(-30%) rotateZ(0deg)
+	}
+
+	40% {
+		transform: translateX(-200%) translateY(3vh) rotateZ(-180deg)
+	}
+
+	40.001%, 43% {
+		transform: translateX(-200%) translateY(-100%) rotateZ(-180deg)
+	}
+
+	65% {
+		transform: translateX(100vw) translateY(50vh) rotateZ(0deg)
+	}
+
+	65.001%, 68% {
+		transform: translateX(20vw) translateY(-200%) rotateZ(180deg)
+	}
+
+	95% {
+		transform: translateX(10vw) translateY(100vh) rotateZ(0deg)
+	}
 }
