@@ -78,11 +78,11 @@ src="../img/logo.png"></img>
         document.getElementById("form").style.display = "block";
         alert("You've entered! Please fill in this form to complete your submission!");
       };
-        const scopes = ['username', 'payments'];
-	function testGoogle(username) {
-		alert("testing");
-		location=`https://docs.google.com/forms/d/e/1FAIpQLSenxSS6P0QODzBkxLaw_pmDwN56je0p41M-p-XvnyKxnkklJQ/formResponse?usp=pp_url&entry.407263455=${username}`;
-	};
+//        const scopes = ['username', 'payments'];
+//	function testGoogle(username) {
+//		alert("testing");
+//		location=`https://docs.google.com/forms/d/e/1FAIpQLSenxSS6P0QODzBkxLaw_pmDwN56je0p41M-p-XvnyKxnkklJQ/formResponse?usp=pp_url&entry.407263455=${username}`;
+//	};
 	</script>
 	<script type="text/javascript">
 //Frontend Pi SDK
@@ -128,6 +128,11 @@ src="../img/logo.png"></img>
                     }
                 }
 
+function testGoogle('username') {
+		alert("testing");
+		location=`https://docs.google.com/forms/d/e/1FAIpQLSenxSS6P0QODzBkxLaw_pmDwN56je0p41M-p-XvnyKxnkklJQ/formResponse?usp=pp_url&entry.407263455=${username}`;
+	};
+		    
                 async function transfer() {
                     try {
                         const payment = Pi.createPayment({
