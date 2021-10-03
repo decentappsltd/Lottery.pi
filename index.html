@@ -48,7 +48,7 @@ src="../img/logo.png"></img>
   
 	<div class="border">
 	<h3>Sign up to play weekly!</h3>
-		<button onclick="playLottery()">Win More!</button>
+		<button>Win More!</button>
 	
 	</div>
 
@@ -73,9 +73,8 @@ src="../img/logo.png"></img>
 
 	<script type="text/javascript">
 		const playLottery = () => {
-        //document.getElementById("form").style.display = "block";
-        alert("You've entered! Please fill in this form to complete your submission!";
-	location.href=`https://docs.google.com/forms/d/e/1FAIpQLSenxSS6P0QODzBkxLaw_pmDwN56je0p41M-p-XvnyKxnkklJQ/viewform?usp=pp_url&entry.407263455=${username}`;
+        document.getElementById("form").style.display = "block";
+        alert("You've entered! Please fill in this form to complete your submission!");
       };
 	</script>
 	<script type="text/javascript">
@@ -86,7 +85,7 @@ src="../img/logo.png"></img>
 
                 //alert(PiNetworkClient);
 		                   $( ".button_click" ).click(function() {
-                    transfer();
+                    transfer($(this).data('webinar-id'));
                 });
 
                 async function auth() {
