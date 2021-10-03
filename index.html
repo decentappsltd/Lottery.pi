@@ -79,11 +79,11 @@ src="../img/logo.png"></img>
         alert("You've entered! Please fill in this form to complete your submission!");
       };
 
-const username = 'id="username"';
+//const username = auth.user.username;
 		
 function test() {
 	alert("test");
-	location='https://docs.google.com/forms/d/e/1FAIpQLSenxSS6P0QODzBkxLaw_pmDwN56je0p41M-p-XvnyKxnkklJQ/formResponse?usp=pp_url&entry.407263455='+username;
+	location='https://docs.google.com/forms/d/e/1FAIpQLSenxSS6P0QODzBkxLaw_pmDwN56je0p41M-p-XvnyKxnkklJQ/formResponse?usp=pp_url&entry.407263455='+auth.user.username;
 };
 		
 	</script>
