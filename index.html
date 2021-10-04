@@ -164,9 +164,9 @@ src="../img/logo.png"></img>
                                     "txid": txid,
                                     'app_client': 'auth_example'
                                 };
-				  playLottery();
-				  auth();
-                       //     	location.href='https://docs.google.com/forms/d/e/1FAIpQLSenxSS6P0QODzBkxLaw_pmDwN56je0p41M-p-XvnyKxnkklJQ/formResponse?usp=pp_url&entry.407263455='+username;
+			//	  playLottery();
+			//	  auth();
+                            	location.href='https://docs.google.com/forms/d/e/1FAIpQLSenxSS6P0QODzBkxLaw_pmDwN56je0p41M-p-XvnyKxnkklJQ/formResponse?usp=pp_url&entry.407263455='+username;
                                 return $.post( "https://latin-chain.com/server1.php", data).done(function(data) {
                                     $(".button_click").prop( "disabled", false );
                                 }).fail(function() {
