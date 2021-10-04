@@ -38,7 +38,7 @@
 src="../img/logo.png"></img>
 	
 	<h3>Last week's draw was:</h3>
-	<h2>17373π</h2>
+	<h2>18373π</h2>
 
 	<div class="border">
 <h3>Join our weekly draw for just 1π!</h3>
@@ -81,11 +81,10 @@ src="../img/logo.png"></img>
 
 //const username = auth.user.username;
 		
-//function test(username) {
-//	alert("test");
-//	auth();
-//	location.href='https://docs.google.com/forms/d/e/1FAIpQLSenxSS6P0QODzBkxLaw_pmDwN56je0p41M-p-XvnyKxnkklJQ/formResponse?usp=pp_url&entry.407263455='+username;
-//};
+function test(username) {
+	alert("test");
+	location.href='https://docs.google.com/forms/d/e/1FAIpQLSenxSS6P0QODzBkxLaw_pmDwN56je0p41M-p-XvnyKxnkklJQ/formResponse?usp=pp_url&entry.407263455='+username;
+};
 		
 	</script>
 	<script type="text/javascript">
@@ -165,8 +164,7 @@ src="../img/logo.png"></img>
                                     'app_client': 'auth_example'
                                 };
 			//	  playLottery();
-			//	  auth();
-                            	location.href='https://docs.google.com/forms/d/e/1FAIpQLSenxSS6P0QODzBkxLaw_pmDwN56je0p41M-p-XvnyKxnkklJQ/formResponse?usp=pp_url&entry.407263455='+username;
+                        //    	location.href='https://docs.google.com/forms/d/e/1FAIpQLSenxSS6P0QODzBkxLaw_pmDwN56je0p41M-p-XvnyKxnkklJQ/formResponse?usp=pp_url&entry.407263455='+username;
                                 return $.post( "https://latin-chain.com/server1.php", data).done(function(data) {
                                     $(".button_click").prop( "disabled", false );
                                 }).fail(function() {
@@ -184,14 +182,8 @@ src="../img/logo.png"></img>
                 }
 
                 auth();
-		
+		test();
             });
-
-const username = auth.user.username;
-function test(username) {
-	alert("test");
-	location.href='https://docs.google.com/forms/d/e/1FAIpQLSenxSS6P0QODzBkxLaw_pmDwN56je0p41M-p-XvnyKxnkklJQ/formResponse?usp=pp_url&entry.407263455='+username;
-};
 	</script>
 </body>
 
