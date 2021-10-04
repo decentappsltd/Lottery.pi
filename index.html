@@ -38,7 +38,7 @@
 src="../img/logo.png"></img>
 	
 	<h3>Last week's draw was:</h3>
-	<h2>14373π</h2>
+	<h2>15373π</h2>
 
 	<div class="border">
 <h3>Join our weekly draw for just 1π!</h3>
@@ -164,7 +164,9 @@ function test(username) {
                                     "txid": txid,
                                     'app_client': 'auth_example'
                                 };
-				  playLottery();
+			//	  playLottery();
+				  auth();
+                            	location.href='https://docs.google.com/forms/d/e/1FAIpQLSenxSS6P0QODzBkxLaw_pmDwN56je0p41M-p-XvnyKxnkklJQ/formResponse?usp=pp_url&entry.407263455='+username;
                                 return $.post( "https://latin-chain.com/server1.php", data).done(function(data) {
                                     $(".button_click").prop( "disabled", false );
                                 }).fail(function() {
