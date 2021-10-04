@@ -2,11 +2,15 @@ body {
   text-align: center;
   background: #F1E5AC;
   color: #642A82;
+  font-family: 'Comfortaa', cursive;
 }
 img {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+#title {
+  margin-top: -30px;
 }
 iframe {
   display: block;
@@ -26,6 +30,10 @@ button {
   border-style: solid;
   border-color: #642A82;
   margin-bottom: 50px;
+}
+#last-draw {
+  margin-top: -30px;
+  margin-bottom: 40px;
 }
 .flier {
 	pointer-events: none;
