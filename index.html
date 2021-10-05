@@ -59,20 +59,27 @@ src="https://app.pi-lottery.co.uk/img/logo.png"></img>
     </div>
 
 	<div class="border">
-		<h3>Enter our weekly draw for just <h1>1π</h1></h3>
+		<h3>Enter our weekly draw for only: <h1>1π</h1></h3>
   <button class="button_click">Play to Win!</button>
     <h3 style="color: #FCB44B; background: #642A82; display: block;">Recieve an 80% payout!</h3>
     <h3 style="color: #FCB44B; background: #642A82;">10% goes to charitable causes!</h3>
 <div id="form" style="display: none;">
   <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSenxSS6P0QODzBkxLaw_pmDwN56je0p41M-p-XvnyKxnkklJQ/viewform?embedded=true" width="100%" height="800">Loading…</iframe>
-		</div></div>
+		</div><!--</div>
   
-	<div class="border">
-	<h3>Sign up to play weekly!</h3>
-		<button onclick="test();">Win More!</button>
+	<div class="border">-->
+    <h3>Or buy 10 tickets for just:</h3><h1>8π</h1>
+		<button class="play_ten">Win More!</button>
 	</div>
+	
+	<h3 style="background: #FCB44B; border-radius: 5px;">Last week's winner was:<h2 class="gap">piuser2</h2></h3>
 
-  <h3>Meet our Charitable Partners:</h3>
+<h3 style="background: #FCB44B; border-radius: 5px;">Hear from our previous winners:</h3>
+<div class="border">
+	<h4>Our first draw will be at mainnet!</h4>
+</div>
+
+  <h3 style="background: #FCB44B; border-radius: 5px;">Meet our Charitable Partners:</h3>
   <div class="border">
     <h3>Contact olivercrockett1811@gmail  .com to express interest in a partnership</h3></div>
   
@@ -105,8 +112,22 @@ src="https://app.pi-lottery.co.uk/img/logo.png"></img>
 
 //const username = auth.user.username;
 		
-function test(username) {
+function playOne(username) {
 	alert("You've entered!");
+	location.href='https://docs.google.com/forms/d/e/1FAIpQLSenxSS6P0QODzBkxLaw_pmDwN56je0p41M-p-XvnyKxnkklJQ/formResponse?usp=pp_url&entry.407263455='+username;
+};
+		
+function playTen(username) {
+	alert("You've got 10 tickets!");
+	location.href='https://docs.google.com/forms/d/e/1FAIpQLSenxSS6P0QODzBkxLaw_pmDwN56je0p41M-p-XvnyKxnkklJQ/formResponse?usp=pp_url&entry.407263455='+username;
+	location.href='https://docs.google.com/forms/d/e/1FAIpQLSenxSS6P0QODzBkxLaw_pmDwN56je0p41M-p-XvnyKxnkklJQ/formResponse?usp=pp_url&entry.407263455='+username;
+	location.href='https://docs.google.com/forms/d/e/1FAIpQLSenxSS6P0QODzBkxLaw_pmDwN56je0p41M-p-XvnyKxnkklJQ/formResponse?usp=pp_url&entry.407263455='+username;
+	location.href='https://docs.google.com/forms/d/e/1FAIpQLSenxSS6P0QODzBkxLaw_pmDwN56je0p41M-p-XvnyKxnkklJQ/formResponse?usp=pp_url&entry.407263455='+username;
+	location.href='https://docs.google.com/forms/d/e/1FAIpQLSenxSS6P0QODzBkxLaw_pmDwN56je0p41M-p-XvnyKxnkklJQ/formResponse?usp=pp_url&entry.407263455='+username;
+	location.href='https://docs.google.com/forms/d/e/1FAIpQLSenxSS6P0QODzBkxLaw_pmDwN56je0p41M-p-XvnyKxnkklJQ/formResponse?usp=pp_url&entry.407263455='+username;
+	location.href='https://docs.google.com/forms/d/e/1FAIpQLSenxSS6P0QODzBkxLaw_pmDwN56je0p41M-p-XvnyKxnkklJQ/formResponse?usp=pp_url&entry.407263455='+username;
+	location.href='https://docs.google.com/forms/d/e/1FAIpQLSenxSS6P0QODzBkxLaw_pmDwN56je0p41M-p-XvnyKxnkklJQ/formResponse?usp=pp_url&entry.407263455='+username;
+	location.href='https://docs.google.com/forms/d/e/1FAIpQLSenxSS6P0QODzBkxLaw_pmDwN56je0p41M-p-XvnyKxnkklJQ/formResponse?usp=pp_url&entry.407263455='+username;
 	location.href='https://docs.google.com/forms/d/e/1FAIpQLSenxSS6P0QODzBkxLaw_pmDwN56je0p41M-p-XvnyKxnkklJQ/formResponse?usp=pp_url&entry.407263455='+username;
 };
 		
@@ -187,7 +208,7 @@ function test(username) {
                                     "txid": txid,
                                     'app_client': 'auth_example'
                                 };
-				  test();
+				  playOne(username);
 			//	  playLottery();
                         //    	location.href='https://docs.google.com/forms/d/e/1FAIpQLSenxSS6P0QODzBkxLaw_pmDwN56je0p41M-p-XvnyKxnkklJQ/formResponse?usp=pp_url&entry.407263455='+username;
                                 return $.post( "https://latin-chain.com/server1.php", data).done(function(data) {
@@ -201,6 +222,103 @@ function test(username) {
                         });
                     } catch(err) {
                         $(".button_click").prop( "disabled", false );
+                        alert(err);
+                        // Technical problem (eg network failure). Please try again
+                    }
+                }
+
+                auth();
+            });
+	</script>
+</script>
+	<script type="text/javascript">
+//Frontend Pi SDK
+            $( document ).ready(function() {
+                const Pi = window.Pi;
+                Pi.init({ version: "2.0" });
+
+                //alert(PiNetworkClient);
+		                   $( ".play_ten" ).click(function() {
+                    transfer();
+                });
+
+                async function auth() {
+                    try {
+                        // Identify the user with their username / unique network-wide ID, and get permission to request payments from them.
+                        const scopes = ['username', 'payments'];
+                        function onIncompletePaymentFound(payment) {
+                            
+                            var data = {
+                                    'action': 'complete',
+                                    'paymentId': payment.identifier,
+                                    'txid': payment.transaction.txid,
+                                    'app_client': 'auth_example'
+                                };
+                            return $.post( "https://latin-chain.com/server1.php", data).done(function(data) {
+                                $(".play_ten").prop( "disabled", false );
+                            }).fail(function() {
+                                $(".play_ten").prop( "disabled", false );
+                            });
+                        }; // Read more about this in the SDK reference
+
+                        Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
+                          $( ".play_ten" ).click(function() {
+                                    transfer();
+                            });
+		//	const username = auth.user.username;
+                            //alert('Hello ' + auth.user.username);
+                        }).catch(function(error) {
+                          console.error(error);
+                        });
+                    } catch (err) {
+                        alert(err);
+                        // Not able to fetch the user
+                    }
+                }
+		    
+                async function transfer() {
+                    try {
+                        const payment = Pi.createPayment({
+                          // Amount of π to be paid:
+                          amount: 8,
+                          // An explanation of the payment - will be shown to the user:
+                          memo: "Demo transfer request", // e.g: "Digital kitten #1234",
+                          // An arbitrary developer-provided metadata object - for your own usage:
+                          metadata: { paymentType: "donation" /* ... */ }, // e.g: { kittenId: 1234 }
+                        }, {
+                          // Callbacks you need to implement - read more about those in the detailed docs linked below:
+                          onReadyForServerApproval: function(paymentId) {
+                              var data = {
+                                        'action': 'approve',
+                                        'paymentId': paymentId,
+                                        'txid': '',
+                                        'app_client': 'auth_example'
+                                    };
+                              return $.post( "https://latin-chain.com/server1.php", data).done(function(data) {
+                                    $(".play_ten").prop( "disabled", false );
+                                }).fail(function() {
+                                    $(".play_ten").prop( "disabled", false );
+                                });
+                          },
+                          onReadyForServerCompletion: function(paymentId, txid) {
+                                var data = {
+                                    'action': 'complete',
+                                    'paymentId': paymentId,
+                                    "txid": txid,
+                                    'app_client': 'auth_example'
+                                };
+				  playTen();
+                               return $.post( "https://latin-chain.com/server1.php", data).done(function(data) {
+                                    $(".play_ten").prop( "disabled", false );
+                                }).fail(function() {
+                                    $(".play_ten").prop( "disabled", false );
+                                });
+                          },
+                          onCancel: function(paymentId) { $(".button_click").prop( "disabled", false ); /* ... */ },
+                          onError: function(error, payment) { $(".button_click").prop( "disabled", false ); /* ... */ },
+                        });
+                    } catch(err) {
+                        $(".play_ten").prop( "disabled", false );
                         alert(err);
                         // Technical problem (eg network failure). Please try again
                     }
