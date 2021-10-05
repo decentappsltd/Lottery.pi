@@ -25,11 +25,13 @@ button {
   padding: 20px 60px;
   font-size: 25px;
   font-weight: bold;
+  border-radius: 15px;
 }
 .border {
   border-style: solid;
   border-color: #642A82;
   margin-bottom: 50px;
+  border-radius: 15px;
 }
 #last-draw {
   margin-top: -30px;
@@ -38,7 +40,9 @@ button {
 .flier {
 	pointer-events: none;
 }
-
+.gap {
+  margin-bottom: 50px;
+}
 .flier > * {
 /* Adjust animation duration to change the element’s speed */
         animation: fly1 50s linear infinite;
