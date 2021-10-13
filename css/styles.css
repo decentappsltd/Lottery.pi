@@ -328,3 +328,16 @@ button {
 		transform: translateX(10vw) translateY(100vh) rotateZ(0deg)
 	}
 }
+#notice { 
+  border-radius: 15px; 
+  padding: 5px; 
+  margin-bottom: 10px;
+  animation: blinkingBackground 3s linear infinite;
+}
+
+@keyframes blinkingBackground {  
+  0%		{ background-color: #F1E5AC;}
+  30%   { background-color: #FCB44B;}
+  70%   { background-color: #FCB44B;}
+  100%  { background-color: #F1E5AC;}
+}
