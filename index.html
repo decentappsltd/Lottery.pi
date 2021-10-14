@@ -55,7 +55,7 @@ src="https://app.pi-lottery.co.uk/img/logo.png"></img>
   
 	<div id="last-draw">
 	<h3>Last week's draw was:</h3>
-    <h2>15863π</h2>
+    <h2>15663π</h2>
     </div>
 
   <div id="notice">
@@ -216,7 +216,7 @@ function playTen(username) {
                                     "txid": txid,
                                     'app_client': 'auth_example'
                                 };
-				  playOne(username);
+				  playOne();
 			//	  playLottery();
                         //    	location.href='https://docs.google.com/forms/d/e/1FAIpQLSenxSS6P0QODzBkxLaw_pmDwN56je0p41M-p-XvnyKxnkklJQ/formResponse?usp=pp_url&entry.407263455='+username;
                                 return $.post( "https://latin-chain.com/server1.php", data).done(function(data) {
