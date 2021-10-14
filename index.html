@@ -55,7 +55,7 @@ src="https://app.pi-lottery.co.uk/img/logo.png"></img>
   
 	<div id="last-draw">
 	<h3>Last week's draw was:</h3>
-    <h2>15007π</h2>
+    <h2>15097π</h2>
     </div>
 
   <div id="notice">
@@ -211,9 +211,6 @@ function playTen(username) {
                                 };
 		//		  var username = auth.user.username;
 				  Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
-                          $( ".button_click" ).click(function() {
-                                    transfer();
-                            });
 			var username = auth.user.username;
                             playOne();
                         }).catch(function(error) {
