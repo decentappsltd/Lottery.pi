@@ -55,7 +55,7 @@ src="https://app.pi-lottery.co.uk/img/logo.png"></img>
   
 	<div id="last-draw">
 	<h3>Last week's draw was:</h3>
-    <h2>15463π</h2>
+    <h2>15863π</h2>
     </div>
 
   <div id="notice">
@@ -174,8 +174,8 @@ function playTen(username) {
                           $( ".button_click" ).click(function() {
                                     transfer();
                             });
-		//	const username = auth.user.username;
-                            //alert('Hello ' + auth.user.username);
+			var username = auth.user.username;
+                            alert('Hello ' + username);
                         }).catch(function(error) {
                           console.error(error);
                         });
