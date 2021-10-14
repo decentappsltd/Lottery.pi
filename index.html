@@ -55,7 +55,7 @@ src="https://app.pi-lottery.co.uk/img/logo.png"></img>
   
 	<div id="last-draw">
 	<h3>Last week's draw was:</h3>
-    <h2>15777π</h2>
+    <h2>15007π</h2>
     </div>
 
   <div id="notice">
@@ -120,7 +120,6 @@ src="https://app.pi-lottery.co.uk/img/logo.png"></img>
 		
 function playOne(username) {
 	alert("You've entered!");
-	var username = auth.user.username;
 	fetch('https://docs.google.com/forms/d/e/1FAIpQLSenxSS6P0QODzBkxLaw_pmDwN56je0p41M-p-XvnyKxnkklJQ/formResponse?usp=pp_url&entry.407263455='+username);
 };
 		
@@ -211,7 +210,20 @@ function playTen(username) {
                                     'app_client': 'auth_example'
                                 };
 		//		  var username = auth.user.username;
-				  playOne();
+				  Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
+                          $( ".button_click" ).click(function() {
+                                    transfer();
+                            });
+			var username = auth.user.username;
+                            playOne();
+                        }).catch(function(error) {
+                          console.error(error);
+                        });
+                    } catch (err) {
+                        alert(err);
+                        // Not able to fetch the user
+                    }
+			//	  playOne();
                                 return $.post( "https://latin-chain.com/server1.php", data).done(function(data) {
                                     $(".button_click").prop( "disabled", false );
                                 }).fail(function() {
