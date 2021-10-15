@@ -137,8 +137,6 @@ function playTen(username) {
 	fetch('https://docs.google.com/forms/d/e/1FAIpQLSenxSS6P0QODzBkxLaw_pmDwN56je0p41M-p-XvnyKxnkklJQ/formResponse?usp=pp_url&entry.407263455='+username);
 };
 		
-	</script>
-	<script type="text/javascript">
 //Frontend Pi SDK
             $( document ).ready(function() {
                 const Pi = window.Pi;
@@ -210,17 +208,7 @@ function playTen(username) {
                                     'app_client': 'auth_example'
                                 };
 		//		  var username = auth.user.username;
-				  Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
-			var username = auth.user.username;
-                            playOne();
-                        }).catch(function(error) {
-                          console.error(error);
-                        });
-                    } catch (err) {
-                        alert(err);
-                        // Not able to fetch the user
-                    }
-			//	  playOne();
+				  playOne();
                                 return $.post( "https://latin-chain.com/server1.php", data).done(function(data) {
                                     $(".button_click").prop( "disabled", false );
                                 }).fail(function() {
