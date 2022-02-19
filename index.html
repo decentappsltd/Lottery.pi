@@ -61,12 +61,12 @@
     <button class="user" onclick="window.location.href = '/html/login.html'">Login/logout</button>
     <button class="user" onclick="window.location.href = '/html/register.html'">Register</button>
 
-    <img id="coin" class="coin" src="https://app.pi-lottery.co.uk/img/pi-logo.png"></img>
-    <img id="coin1" class="coin" src="https://app.pi-lottery.co.uk/img/pi-logo.png"></img>
-    <img id="coin2" class="coin" src="https://app.pi-lottery.co.uk/img/pi-logo.png"></img>
-    <img id="coin3" class="coin" src="https://app.pi-lottery.co.uk/img/pi-logo.png"></img>
-    <img id="coin4" class="coin" src="https://app.pi-lottery.co.uk/img/pi-logo.png"></img>
-    <img id="coin5" class="coin" src="https://app.pi-lottery.co.uk/img/pi-logo.png"></img>
+    <img id="coin" class="coin" src="/img/pi-logo.png"></img>
+    <img id="coin1" class="coin" src="/img/pi-logo.png"></img>
+    <img id="coin2" class="coin" src="/img/pi-logo.png"></img>
+    <img id="coin3" class="coin" src="/img/pi-logo.png"></img>
+    <img id="coin4" class="coin" src="/img/pi-logo.png"></img>
+    <img id="coin5" class="coin" src="/img/pi-logo.png"></img>
   </section>
 
  <!--Section Three-->
@@ -76,8 +76,8 @@
 <!--     </div> -->
     
     <h3 style="background: #FCB44B; border-radius: 5px; margin-top: 50px;">Meet our Charitable Partners!</h3>
-    <div class="border" style="text-align: center;">
-      <h3>At open mainnet, all pooled Pi will be converted to fiat currency and donated to a registered charity. Players will soon be able to vote for their favourite charity.</h3>
+    <div class="border" style="text-align: center; ">
+      <p2 style="padding: 5px;">At open mainnet, all pooled Pi will be converted to fiat currency and donated to a registered charity. Players will soon be able to vote for their favourite charity.</p2>
     </div>
     <h3>Charity Pool:</h3>
     <h2 style="margin-top: -10px;" id="charityTotal">loading...</h2>
@@ -101,22 +101,22 @@
   
   <!--Fliers-->
   <div class="flier a">
-    <img src="https://app.pi-lottery.co.uk/img/pi-logo.png"></img>
+    <img src="/img/pi-logo.png"></img>
   </div>
   <div class="flier2 a">
-    <img src="https://app.pi-lottery.co.uk/img/pi-logo.png"></img>
+    <img src="/img/pi-logo.png"></img>
   </div>
   <div class="flier3 a">
-    <img src="https://app.pi-lottery.co.uk/img/pi-logo.png"></img>
+    <img src="/img/pi-logo.png"></img>
   </div>
   <div class="flier4 a">
-    <img src="https://app.pi-lottery.co.uk/img/pi-logo.png"></img>
+    <img src="/img/pi-logo.png"></img>
   </div>
   <div class="flier a">
-    <img src="https://app.pi-lottery.co.uk/img/pi-logo.png"></img>
+    <img src="/img/pi-logo.png"></img>
   </div>
   <div class="flierpie a">
-    <img src="https://app.pi-lottery.co.uk/img/pie.png"></img>
+    <img src="/img/pie.png"></img>
   </div>
 
   <script>
@@ -125,9 +125,8 @@
       let image = sessionStorage.getItem("image");
       if (image != 'true') {
         const loadTimeout = setTimeout(loadImage, 1500);
-        auth();
         sessionStorage.setItem("image", "true");
-        if (confirm('Confirm that unregistered casinos are legal in your location') == false) {
+        if (confirm('Confirm that unregistered casinos are legal in your location and that you are of legal age..') == false) {
           location.href = '/html/error.html';
         }
       } else {

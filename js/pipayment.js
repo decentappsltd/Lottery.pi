@@ -61,6 +61,10 @@ function testPayment() {
 }
 
 function play_one() {
+  const authed = sessionStorage.getItem('userSession');
+  if (authed == null) {
+    alert('Please login first');
+  } else {
   const payment = Pi.createPayment(
   {
     amount: 1,
@@ -100,9 +104,14 @@ function play_one() {
     }
   }
 );
+  }
 }
 
 function play_ten() {
+  const authed = sessionStorage.getItem('userSession');
+  if (authed == null) {
+    alert('Please login first');
+  } else {
   const payment = Pi.createPayment(
   {
     amount: 8,
@@ -142,10 +151,11 @@ function play_ten() {
     }
   }
 );
+  }
 }
   
 function withdraw() {
-  alert('The Pi Core Team have not enabled this feature yet..');
+  alert('Feature not made available in Pi SDK yet..');
 };
 
 // async function won() {
