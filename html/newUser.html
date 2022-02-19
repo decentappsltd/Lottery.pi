@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3FS6H7R7X5"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-3FS6H7R7X5');
+  </script>
+
+    <!--CSS-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="icon" type="image/png" href="/img/logo.png" />
+
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <img id="title" width="250" style="position:relative;top:0;margin-top:-40px;margin-bottom:-40px;" src="https://app.pi-lottery.co.uk/img/logo.png"></img>
+
+    <button style="margin-top: -20px; padding: 5px; font-size: 15px; border-radius: 5px;" onclick="location.href='/index.html'">Back</button>
+    <br>
+  
+    <p1>Now please login:</p1>
+    </br></br>    
+
+    <div class="error_log" id="error_log"></div>
+      <form action="/login" method="POST">
+        <label for="pi_username">Enter Pi Username:</label></br>
+        <input id="pi_username" required></br></br>
+        <label for="user_password">Enter Password:</label></br>
+        <input type="password" id="user_password" required></br></br>
+        <label for="login">
+        <input type="submit" value="Submit" class="login" id="firstLogin"></input></label></br>
+      </form><br><br>
+
+    <!--Scripts-->
+      <script src="https://sdk.minepi.com/pi-sdk.js"></script>
+      <script>
+        Pi.init({ version: "2.0" });
+      </script>
+      <script
+        src="https://kit.fontawesome.com/3aea44e36d.js"
+        crossorigin="anonymous"
+      ></script>
+      <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+      <script src="/js/routes.js"></script>
+    <!-- <script src="/js/pipayment.js"></script> -->
+    <script
+      src="https://kit.fontawesome.com/3aea44e36d.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

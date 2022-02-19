@@ -1,322 +1,142 @@
 <!DOCTYPE html>
 <html>
 <head>
-  
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-3FS6H7R7X5"></script>
-<script>
+  <!--Google Analytics-->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3FS6H7R7X5"></script>
+  <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-3FS6H7R7X5');
-</script>
+  </script>
   
-  
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--Load Dependencies-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/styles.css">
-	
-	<meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <meta name="viewport" content="width=device-width, user-scalable=yes">
-        
-        <!-- ios support -->
-        <meta name="apple-mobile-web-app-status-bar" content="#db4938" />
-        <meta name="theme-color" content="#db4938" />
-        
-        <meta name="application-name" content="Pi Example">
-
-        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-        <!--[if lt IE 9]>
-            <script src="assets/js/html5shiv-pre3.6.js"></script>
-        <![endif]-->
-
-       <script type="text/javascript" src="jquery-3.5.1.min.js"></script>
-        <!--<script src="https://downloads.minepi.com/sdk/v1/dev.js"></script>-->
-        <!--<script src="https://downloads.minepi.com/sdk/v1/prod.js"></script>-->
-        <script src="https://sdk.minepi.com/pi-sdk.js"></script>
-        
-        	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-     
-<link rel="icon" 
-      type="image/png" 
-      href="../img/logo.png">
+  <script src="https://sdk.minepi.com/pi-sdk.js"></script>
+  <script src="/js/routes.js"></script>
+  <script src="/js/pipayment.js"></script>
+  <link rel="icon" type="image/png" href="../img/logo.png">  
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   
+  <!--Google Fonts-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap" rel="stylesheet">
-	
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;700&display=swap" rel="stylesheet">
 </head>
+  
 <body>
-<img id="title" width="250" style="position:relative;top:0"
-src="https://app.pi-lottery.co.uk/img/logo.png"></img>
-  
-	<div id="last-draw">
-	<h3>Last week's draw was:</h3>
-    <h2>15007π</h2>
+  <img src="/img/loadImage.png" class="loadImage" id="loadImage"></img>  
+  <div class="slider">
+    
+    <!--Section One-->
+    <section id="sectionOne">
+      <img onclick="drawWinner()" id="title" width="250" src="/img/logo.png"></img>
+ 
+    <div id="last-draw">
+      <h3 style="margin-top: 30px;">This week's pool:</h3>
+      <h2 id="pool" style="margin-top: -10px;">loading...</h2>
     </div>
+
+    <div style="margin-top: -30px;" class="border">
+      <h3>Play our weekly draw for only: </h3>
+      <h1 style="margin-top:-20px;">1π</h1>
+      <img class="button_click" onclick="play_one()" src="/img/Oneticket.png" style="width: 150px; margin-top: -50px; margin-bottom: -30px;"></img>
+    
+      <h3>Or play more for just:</h3>
+      <h1 style="margin-top:-20px;">8π</h1>
+		  <img class="play_ten" onclick="play_ten()" src="/img/Tentickets.png" style="width: 150px; margin-top: -50px; margin-bottom: -30px;"></img>
+		  </div>
+        <h5>&copy; Decent Apps Ltd</h5>
+		  </section>
+
+  <!--Section Two-->
+  <section id="sectionTwo">
+    <h2 id="wintitle">My Winnings</h2>
+    <h3 id="displayUserHandle"></h2>
+    <h1 id="my_credit">Please login</h1>
+    <button onclick="withdraw()" id="withdraw">Withdraw Pi</button></br>
+    <button onclick="location.href='#sectionOne'">Play to Win!</button></br>
+
+    <button class="user" onclick="window.location.href = '/html/login.html'">Login/logout</button>
+    <button class="user" onclick="window.location.href = '/html/register.html'">Register</button>
+
+    <img id="coin" class="coin" src="https://app.pi-lottery.co.uk/img/pi-logo.png"></img>
+    <img id="coin1" class="coin" src="https://app.pi-lottery.co.uk/img/pi-logo.png"></img>
+    <img id="coin2" class="coin" src="https://app.pi-lottery.co.uk/img/pi-logo.png"></img>
+    <img id="coin3" class="coin" src="https://app.pi-lottery.co.uk/img/pi-logo.png"></img>
+    <img id="coin4" class="coin" src="https://app.pi-lottery.co.uk/img/pi-logo.png"></img>
+    <img id="coin5" class="coin" src="https://app.pi-lottery.co.uk/img/pi-logo.png"></img>
+  </section>
+
+ <!--Section Three-->
+  <section id="sectionFour">
+<!--     <div onclick="location.href='/html/winners.html'"> -->
+      <h3 style="color: #FCB44B; background: #642A82; margin-top: 10px; border-radius: 5px;">Last week's winner was:<h2 id="lastWinner" class="gap">loading...</h2></h3>
+<!--     </div> -->
+    
+    <h3 style="background: #FCB44B; border-radius: 5px; margin-top: 50px;">Meet our Charitable Partners!</h3>
+    <div class="border" style="text-align: center;">
+      <h3>At open mainnet, all pooled Pi will be converted to fiat currency and donated to a registered charity. Players will soon be able to vote for their favourite charity.</h3>
+    </div>
+    <h3>Charity Pool:</h3>
+    <h2 style="margin-top: -10px;" id="charityTotal">loading...</h2>
+    <button onclick="location.href='/html/charity.html'" class="see-all">See All</button>
+   </section>
   
-	<div class="border">
-		<h3>Enter our weekly draw for only: <h1>1π</h1></h3>
-  <button class="button_click">Play to Win!</button>
-    <h3 style="color: #FCB44B; background: #642A82; display: block;">Recieve an 80% payout!</h3>
-    <h3 style="color: #FCB44B; background: #642A82;">10% goes to charitable causes!</h3>
-<div id="form" style="display: none;">
-  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSenxSS6P0QODzBkxLaw_pmDwN56je0p41M-p-XvnyKxnkklJQ/viewform?embedded=true" width="100%" height="800">Loading…</iframe>
-		</div><!--</div>
+  <!--Section Four-->
+  <section id="sectionThree">
+    <div class="notice">
+      <h3>Receive an 80% payout!</h3>
+      <h3>10% goes to charitable causes!</h3>
+    </div>
+    
+    <div class="border" style="padding: 10px; text-align: justify;">
+      <h3 style="margin-top: -5px;">About Us:</h3>
+      <p3>Lottery.pi, the world’s first online lottery app that draws on the power of Pi, the cryptocurrency of everyday people, is poised to generate greater contributions to charitable causes and provide substantial economic boost to the Pi blockchain from revenue expected to be generated from the massive sale of lottery tickets. Lottery.pi intends to hold one lottery draw every week, as it promises to change lives. To put power in the hands of everyday people. And to provide everyday people – Pioneers – with a reason to believe their dreams can come true.</p3>
+    </div>
+  </section>
+
+   </div>  
   
-	<div class="border">-->
-    <h3>Or buy 10 tickets for just:</h3><h1>8π</h1>
-		<button class="play_ten">Win More!</button>
-	</div>
-	
-	<h3 style="background: #FCB44B; border-radius: 5px;">Last week's winner was:<h2 class="gap">Elviswani2</h2></h3>
-	<h4>Contact info@pi-lottery.co.uk to claim your Test-Pi!<h4>
+  <!--Fliers-->
+  <div class="flier a">
+    <img src="https://app.pi-lottery.co.uk/img/pi-logo.png"></img>
+  </div>
+  <div class="flier2 a">
+    <img src="https://app.pi-lottery.co.uk/img/pi-logo.png"></img>
+  </div>
+  <div class="flier3 a">
+    <img src="https://app.pi-lottery.co.uk/img/pi-logo.png"></img>
+  </div>
+  <div class="flier4 a">
+    <img src="https://app.pi-lottery.co.uk/img/pi-logo.png"></img>
+  </div>
+  <div class="flier a">
+    <img src="https://app.pi-lottery.co.uk/img/pi-logo.png"></img>
+  </div>
+  <div class="flierpie a">
+    <img src="https://app.pi-lottery.co.uk/img/pie.png"></img>
+  </div>
 
-  <div onclick="location.href='/html/winners.html';">
-<h3 style="background: #FCB44B; border-radius: 5px;">Hear from our previous winners:</h3>
-<div class="border">
-  <h4>Join our first draw now to be Lottery.pi's 1st Winner!</h4>
-    </div></div>
-
-  <div onclick="location.href='/html/charity.html';">
-  <h3 style="background: #FCB44B; border-radius: 5px;">Meet our Charitable Partners:</h3>
-  <div class="border">
-    <h3>Contact info@pi-lottery.co.uk to express interest in a partnership</h3>
-    </div></div>
-  
-  <h4>Be Gamble Aware</h4>
-  <h4>Pi, Pi Network and the Pi logo are trademarks of the Pi Community Company.</h4>
-  
-<div class="flier">
-  <img src="https://app.pi-lottery.co.uk/img/pi-logo.png"></img>
-</div>
-<div class="flier2">
-  <img src="https://app.pi-lottery.co.uk/img/pi-logo.png"></img>
-</div>
-<div class="flier3">
-  <img src="https://app.pi-lottery.co.uk/img/pi-logo.png"></img>
-</div>
-<div class="flier4">
-  <img src="https://app.pi-lottery.co.uk/img/pi-logo.png"></img>
-</div>
-<div class="flier">
-  <img src="https://app.pi-lottery.co.uk/img/pi-logo.png"></img>
-</div>
-<div class="flierpie">
-  <img src="https://app.pi-lottery.co.uk/img/pie.png"></img>
-</div>
-
-	<script type="text/javascript">
-		const playLottery = () => {
-        document.getElementById("form").style.display = "block";
-        alert("You've entered! Please fill in this form to complete your submission!");
-      };
-		
-function playOne(username) {
-	alert("You've entered!");
-	fetch('https://docs.google.com/forms/d/e/1FAIpQLSenxSS6P0QODzBkxLaw_pmDwN56je0p41M-p-XvnyKxnkklJQ/formResponse?usp=pp_url&entry.407263455='+localStorage.getItem("username")+'&entry.1868207234=1');
-};
-		
-function playTen(username) {
-	alert("You've got 10 tickets!");
-	fetch('https://docs.google.com/forms/d/e/1FAIpQLSenxSS6P0QODzBkxLaw_pmDwN56je0p41M-p-XvnyKxnkklJQ/formResponse?usp=pp_url&entry.407263455='+localStorage.getItem("username")+'&entry.1868207234=8');
-	fetch('https://docs.google.com/forms/d/e/1FAIpQLSenxSS6P0QODzBkxLaw_pmDwN56je0p41M-p-XvnyKxnkklJQ/formResponse?usp=pp_url&entry.407263455='+localStorage.getItem("username"));
-	fetch('https://docs.google.com/forms/d/e/1FAIpQLSenxSS6P0QODzBkxLaw_pmDwN56je0p41M-p-XvnyKxnkklJQ/formResponse?usp=pp_url&entry.407263455='+localStorage.getItem("username"));
-	fetch('https://docs.google.com/forms/d/e/1FAIpQLSenxSS6P0QODzBkxLaw_pmDwN56je0p41M-p-XvnyKxnkklJQ/formResponse?usp=pp_url&entry.407263455='+localStorage.getItem("username"));
-	fetch('https://docs.google.com/forms/d/e/1FAIpQLSenxSS6P0QODzBkxLaw_pmDwN56je0p41M-p-XvnyKxnkklJQ/formResponse?usp=pp_url&entry.407263455='+localStorage.getItem("username"));
-	fetch('https://docs.google.com/forms/d/e/1FAIpQLSenxSS6P0QODzBkxLaw_pmDwN56je0p41M-p-XvnyKxnkklJQ/formResponse?usp=pp_url&entry.407263455='+localStorage.getItem("username"));
-	fetch('https://docs.google.com/forms/d/e/1FAIpQLSenxSS6P0QODzBkxLaw_pmDwN56je0p41M-p-XvnyKxnkklJQ/formResponse?usp=pp_url&entry.407263455='+localStorage.getItem("username"));
-	fetch('https://docs.google.com/forms/d/e/1FAIpQLSenxSS6P0QODzBkxLaw_pmDwN56je0p41M-p-XvnyKxnkklJQ/formResponse?usp=pp_url&entry.407263455='+localStorage.getItem("username"));
-	fetch('https://docs.google.com/forms/d/e/1FAIpQLSenxSS6P0QODzBkxLaw_pmDwN56je0p41M-p-XvnyKxnkklJQ/formResponse?usp=pp_url&entry.407263455='+localStorage.getItem("username"));
-	fetch('https://docs.google.com/forms/d/e/1FAIpQLSenxSS6P0QODzBkxLaw_pmDwN56je0p41M-p-XvnyKxnkklJQ/formResponse?usp=pp_url&entry.407263455='+localStorage.getItem("username"));
-};
-		
-//Frontend Pi SDK
-            $( document ).ready(function() {
-                const Pi = window.Pi;
-                Pi.init({ version: "2.0" });
-
-                async function auth() {
-                    try {
-                        // Identify the user with their username / unique network-wide ID, and get permission to request payments from them.
-                        const scopes = ['username', 'payments'];
-                        function onIncompletePaymentFound(payment) {
-                            
-                            var data = {
-                                    'action': 'complete',
-                                    'paymentId': payment.identifier,
-                                    'txid': payment.transaction.txid,
-                                    'app_client': 'auth_example'
-                                };
-                            return $.post( "https://latin-chain.com/server1.php", data).done(function(data) {
-                                $(".button_click").prop( "disabled", false );
-                            }).fail(function() {
-                                $(".button_click").prop( "disabled", false );
-                            });
-                        }; // Read more about this in the SDK reference
-
-                        Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
-                          $( ".button_click" ).click(function() {
-                                    transfer();
-                            });
-			var username = auth.user.username;
-			localStorage.setItem("username", username );
-                        }).catch(function(error) {
-                          console.error(error);
-                        });
-                    } catch (err) {
-                        alert(err);
-                        // Not able to fetch the user
-                    }
-                }
-		    
-                async function transfer() {
-                    try {
-                        const payment = Pi.createPayment({
-                          // Amount of π to be paid:
-                          amount: 1,
-                          // An explanation of the payment - will be shown to the user:
-                          memo: "Demo transfer request", // e.g: "Digital kitten #1234",
-                          // An arbitrary developer-provided metadata object - for your own usage:
-                          metadata: { paymentType: "donation" /* ... */ }, // e.g: { kittenId: 1234 }
-                        }, {
-                          // Callbacks you need to implement - read more about those in the detailed docs linked below:
-                          onReadyForServerApproval: function(paymentId) {
-                              var data = {
-                                        'action': 'approve',
-                                        'paymentId': paymentId,
-                                        'txid': '',
-                                        'app_client': 'auth_example'
-                                    };
-                              return $.post( "https://latin-chain.com/server1.php", data).done(function(data) {
-                                    $(".button_click").prop( "disabled", false );
-                                }).fail(function() {
-                                    $(".button_click").prop( "disabled", false );
-                                });
-                          },
-                          onReadyForServerCompletion: function(paymentId, txid) {
-                                var data = {
-                                    'action': 'complete',
-                                    'paymentId': paymentId,
-                                    "txid": txid,
-                                    'app_client': 'auth_example'
-                                };
-		//		  var username = auth.user.username;
-				  playOne();
-                                return $.post( "https://latin-chain.com/server1.php", data).done(function(data) {
-                                    $(".button_click").prop( "disabled", false );
-                                }).fail(function() {
-                                    $(".button_click").prop( "disabled", false );
-                                });
-                          },
-                          onCancel: function(paymentId) { $(".button_click").prop( "disabled", false ); /* ... */ },
-                          onError: function(error, payment) { $(".button_click").prop( "disabled", false ); /* ... */ },
-                        });
-                    } catch(err) {
-                        $(".button_click").prop( "disabled", false );
-                        alert(err);
-                        // Technical problem (eg network failure). Please try again
-                    }
-                }
-
-                auth();
-            });
-	</script>
-</script>
-	<script type="text/javascript">
-//Frontend Pi SDK
-            $( document ).ready(function() {
-                const Pi = window.Pi;
-                Pi.init({ version: "2.0" });
-		    
-                async function auth() {
-                    try {
-                        // Identify the user with their username / unique network-wide ID, and get permission to request payments from them.
-                        const scopes = ['username', 'payments'];
-                        function onIncompletePaymentFound(payment) {
-                            
-                            var data = {
-                                    'action': 'complete',
-                                    'paymentId': payment.identifier,
-                                    'txid': payment.transaction.txid,
-                                    'app_client': 'auth_example'
-                                };
-                            return $.post( "https://latin-chain.com/server1.php", data).done(function(data) {
-                                $(".play_ten").prop( "disabled", false );
-                            }).fail(function() {
-                                $(".play_ten").prop( "disabled", false );
-                            });
-                        }; // Read more about this in the SDK reference
-
-                        Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
-                          $( ".play_ten" ).click(function() {
-                                    transfer();
-                            });
-		//	const username = auth.user.username;
-                            //alert('Hello ' + auth.user.username);
-                        }).catch(function(error) {
-                          console.error(error);
-                        });
-                    } catch (err) {
-                        alert(err);
-                        // Not able to fetch the user
-                    }
-                }
-		    
-                async function transfer() {
-                    try {
-                        const payment = Pi.createPayment({
-                          // Amount of π to be paid:
-                          amount: 8,
-                          // An explanation of the payment - will be shown to the user:
-                          memo: "Demo transfer request", // e.g: "Digital kitten #1234",
-                          // An arbitrary developer-provided metadata object - for your own usage:
-                          metadata: { paymentType: "donation" /* ... */ }, // e.g: { kittenId: 1234 }
-                        }, {
-                          // Callbacks you need to implement - read more about those in the detailed docs linked below:
-                          onReadyForServerApproval: function(paymentId) {
-                              var data = {
-                                        'action': 'approve',
-                                        'paymentId': paymentId,
-                                        'txid': '',
-                                        'app_client': 'auth_example'
-                                    };
-                              return $.post( "https://latin-chain.com/server1.php", data).done(function(data) {
-                                    $(".play_ten").prop( "disabled", false );
-                                }).fail(function() {
-                                    $(".play_ten").prop( "disabled", false );
-                                });
-                          },
-                          onReadyForServerCompletion: function(paymentId, txid) {
-                                var data = {
-                                    'action': 'complete',
-                                    'paymentId': paymentId,
-                                    "txid": txid,
-                                    'app_client': 'auth_example'
-                                };
-				  playTen();
-                               return $.post( "https://latin-chain.com/server1.php", data).done(function(data) {
-                                    $(".play_ten").prop( "disabled", false );
-                                }).fail(function() {
-                                    $(".play_ten").prop( "disabled", false );
-                                });
-                          },
-                          onCancel: function(paymentId) { $(".button_click").prop( "disabled", false ); /* ... */ },
-                          onError: function(error, payment) { $(".button_click").prop( "disabled", false ); /* ... */ },
-                        });
-                    } catch(err) {
-                        $(".play_ten").prop( "disabled", false );
-                        alert(err);
-                        // Technical problem (eg network failure). Please try again
-                    }
-                }
-
-                auth();
-            });
-	</script>
-</body>
-
+  <script>
+      myProfile();
+      renderTotals();
+      let image = sessionStorage.getItem("image");
+      if (image != 'true') {
+        const loadTimeout = setTimeout(loadImage, 1500);
+        auth();
+        sessionStorage.setItem("image", "true");
+        if (confirm('Confirm that unregistered casinos are legal in your location') == false) {
+          location.href = '/html/error.html';
+        }
+      } else {
+        loadImage()
+      }
+      function loadImage() {
+        var l = document.getElementById("loadImage");
+        l.style.display = "none";
+      }
+    </script>
+  </body>
 </html>

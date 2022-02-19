@@ -22,28 +22,7 @@
   
 <body>
   <img id="title" width="250" style="position:relative;top:0" src="https://app.pi-lottery.co.uk/img/logo.png"></img>
+  <h2>We're Sorry!</h2>
+  <h3>To comply with the law and the Pi Community Guidelines, online/unregistered casinos must be legal where you are, in order to use our app.</h3>
   
-  <button style="margin-top: -20px; padding: 5px; font-size: 15px; border-radius: 5px;" onclick="location.href='/index.html';">Back</button>
-  
-  <h3 style="background: #FCB44B; border-radius: 5px;">Meet our Previous Winners!</h3>
-  <div class="border" style="text-align: left;">
-  <script>
-    document.addEventListener("DOMContentLoaded", function(event) {
-      const winnersJSON = axios.get("/winners");
-      const winners = JSON.parse(winnersJSON);
-      renderWebinars(winners);
-    });
-
-    function renderWebinars(winners) {
-      const names = winners['winner'];
-      for (let i = 0; i < names.length; i++) {
-        const renderName = document.createElement('h4');
-        renderName.className = "winners";
-        renderText.textContent = names[i].winner;
-        
-        section.appendChild(renderName);
-      }
-    }
-  </script>
-  </div>
-</body>
+  </body>
