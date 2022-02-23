@@ -38,16 +38,21 @@
       <h2 id="pool" style="margin-top: -10px;">loading...</h2>
     </div>
 
-    <div style="margin-top: -30px;" class="border">
-      <h3>Play our weekly draw for only: </h3>
-      <h1 style="margin-top:-20px;">1π</h1>
+      <h3 style="margin-top:-20px;">Play our weekly draw: </h3>
+    <div style="position: relative; right: 22vw; top: 17px;">
       <img class="button_click" onclick="play_one()" src="/img/Oneticket.png" style="width: 150px; margin-top: -50px; margin-bottom: -30px;"></img>
+    <h2>1π</h2>
+  </div>
     
-      <h3>Or play more for just:</h3>
-      <h1 style="margin-top:-20px;">8π</h1>
+  <div style="position: relative; left: 22vw; top: -120px;">
 		  <img class="play_ten" onclick="play_ten()" src="/img/Tentickets.png" style="width: 150px; margin-top: -50px; margin-bottom: -30px;"></img>
-		  </div>
-        <h5>&copy; Decent Apps Ltd</h5>
+  <h2>8π</h2>
+  </div>
+		<div class="notice" style="margin-top:-100px;">
+      <h3>Receive an 80% payout!</h3>
+      <h3>10% goes to charitable causes!</h3>
+    </div>
+        
 		  </section>
 
   <!--Section Two-->
@@ -55,8 +60,8 @@
     <h2 id="wintitle">My Winnings</h2>
     <h3 id="displayUserHandle"></h2>
     <h1 id="my_credit">Please login</h1>
-    <button onclick="withdraw()" id="withdraw">Withdraw Pi</button></br>
-    <button onclick="location.href='#sectionOne'">Play to Win!</button></br>
+    <button style="width: 65vw;" onclick="withdraw()" id="withdraw">Withdraw Pi</button></br>
+    <button style="width: 65vw;" onclick="location.href='#sectionOne'">Play to Win!</button></br>
 
     <button class="user" onclick="window.location.href = '/html/login.html'">Login/logout</button>
     <button class="user" onclick="window.location.href = '/html/register.html'">Register</button>
@@ -86,15 +91,16 @@
   
   <!--Section Four-->
   <section id="sectionThree">
-    <div class="notice">
+<!--     <div class="notice">
       <h3>Receive an 80% payout!</h3>
       <h3>10% goes to charitable causes!</h3>
-    </div>
+    </div> -->
     
-    <div class="border" style="padding: 10px; text-align: justify;">
+    <div style="padding: 10px; text-align: justify;">
       <h3 style="margin-top: -5px;">About Us:</h3>
       <p3>Lottery.pi, the world’s first online lottery app that draws on the power of Pi, the cryptocurrency of everyday people, is poised to generate greater contributions to charitable causes and provide substantial economic boost to the Pi blockchain from revenue expected to be generated from the massive sale of lottery tickets. Lottery.pi intends to hold one lottery draw every week, as it promises to change lives. To put power in the hands of everyday people. And to provide everyday people – Pioneers – with a reason to believe their dreams can come true.</p3>
     </div>
+    <h5>&copy; Decent Apps Ltd</h5>
   </section>
 
    </div>  
