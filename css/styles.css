@@ -1,8 +1,13 @@
 body {
   text-align: center;
   background: #F1E5AC;
+  background-image: linear-gradient(to bottom right, #F1E5AC, #F1E5AC, #ACB8F1);
   color: #642A82;
   font-family: 'Comfortaa', cursive;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  position: relative;
+  min-height: 100vh;
 }
 img {
   display: block;
@@ -10,7 +15,7 @@ img {
   margin-right: auto;
 }
 #title {
-  margin-top: -30px;
+  margin-top: -10px;
 }
 iframe {
   display: block;
@@ -22,16 +27,18 @@ button {
   margin-bottom: 20px;
   background-color: #FCB44B;
   color: #642A82;
-  padding: 20px 60px;
+  padding: 15px 20px;
   font-size: 25px;
   font-weight: bold;
   border-radius: 15px;
+  border: solid;
 }
 .border {
   border-style: solid;
   border-color: #642A82;
-  margin-bottom: 50px;
+  margin-bottom: 5px;
   border-radius: 15px;
+  padding: 5px;
 }
 #last-draw {
   margin-top: -30px;
@@ -41,12 +48,44 @@ button {
 	pointer-events: none;
 }
 .gap {
+  margin-bottom: 30px;
+}
+.see-all {
+  padding: 0px;
+  background: none;
+  border-style: none;
+  font-size: 15px;
+  postion: absolute;
+  bottom: 0;
+}
+#winnings {
+  font-size: 50px;
+  background: #642A82;
+  border-radius: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: #FCB44B;
+}
+#wintitle {
   margin-bottom: 50px;
 }
+#withdraw {
+  background: #642A82;
+  color: #FCB44B;
+  border-color: #FCB44B;
+}
+.user {
+  padding: 8px;
+  font-size: 20px;
+  border-radius: 5px;
+  margin-top: 50px;
+}
+.button_click:active, .play_ten:active, button:active {
+  transform: translate(2px, 5px);
+}
 .flier > * {
-/* Adjust animation duration to change the element’s speed */
-        animation: fly1 50s linear infinite;
-        pointer-events: none !important;
+  animation: fly1 50s linear infinite;
+  pointer-events: none !important;
 	top: 0;
 	left: 0;
 	transform: translateX(-120%) translateY(-120%) rotateZ(0);
@@ -54,44 +93,30 @@ button {
 	animation-delay: 1s;
 	z-index: 999999;
 }
-
- /* Keyframe values control where the element will begin
-    and end its trajectory across the screen. Each rule
-    represents a path the element follows across the screen. */
-
-
 @keyframes fly1 {
-
 	98.001%, 0% {
-                display: block;
+    display: block;
     width: 100px;
 		transform: translateX(-200%) translateY(-134vh) rotateZ(0deg)
 	}
-
 	30% {
 		transform: translateX(10vw) translateY(-83%) rotateZ(180deg)
 	}
-
 	15.001%, 20% {
 		transform: translateX(100vw) translateY(-50%) rotateZ(0deg)
 	}
-
 	80% {
 		transform: translateX(-200%) translateY(11vh) rotateZ(-180deg)
 	}
-
 	40.001%, 43% {
 		transform: translateX(-200%) translateY(-100%) rotateZ(-180deg)
 	}
-
 	65% {
 		transform: translateX(100vw) translateY(50vh) rotateZ(0deg)
 	}
-
 	65.001%, 68% {
 		transform: translateX(20vw) translateY(-200%) rotateZ(180deg)
 	}
-
 	95% {
 		transform: translateX(10vw) translateY(100vh) rotateZ(0deg)
 	}
@@ -100,11 +125,9 @@ button {
 	pointer-events: none;
   width: 10px;
 }
-
 .flier2 > * {
-/* Adjust animation duration to change the element’s speed */
-        animation: fly2 50s linear infinite;
-        pointer-events: none !important;
+  animation: fly2 50s linear infinite;
+  pointer-events: none !important;
 	top: 0;
 	left: 0;
 	transform: translateX(-120%) translateY(-120%) rotateZ(0);
@@ -112,44 +135,30 @@ button {
 	animation-delay: 5s;
 	z-index: 100;
 }
-
- /* Keyframe values control where the element will begin
-    and end its trajectory across the screen. Each rule
-    represents a path the element follows across the screen. */
-
-
 @keyframes fly2 {
-
 	98.001%, 0% {
-                display: block;
+    display: block;
     width: 100px;
 		transform: translateX(-200%) translateY(100vh) rotateZ(0deg)
 	}
-
 	15% {
 		transform: translateX(100vw) translateY(-100%) rotateZ(180deg)
 	}
-
 	15.001%, 18% {
 		transform: translateX(100vw) translateY(-30%) rotateZ(0deg)
 	}
-
 	40% {
 		transform: translateX(-200%) translateY(3vh) rotateZ(-180deg)
 	}
-
 	40.001%, 43% {
 		transform: translateX(-200%) translateY(-100%) rotateZ(-180deg)
 	}
-
 	65% {
 		transform: translateX(100vw) translateY(50vh) rotateZ(0deg)
 	}
-
 	65.001%, 68% {
 		transform: translateX(20vw) translateY(-200%) rotateZ(180deg)
 	}
-
 	95% {
 		transform: translateX(10vw) translateY(100vh) rotateZ(0deg)
 	}
@@ -158,11 +167,9 @@ button {
 	pointer-events: none;
   width: 10px;
 }
-
 .flier3 > * {
-/* Adjust animation duration to change the element’s speed */
-        animation: fly3 50s linear infinite;
-        pointer-events: none !important;
+  animation: fly3 50s linear infinite;
+  pointer-events: none !important;
 	top: 0;
 	left: 0;
 	transform: translateX(-120%) translateY(-120%) rotateZ(0);
@@ -170,44 +177,30 @@ button {
 	animation-delay: 19s;
 	z-index: 100;
 }
-
- /* Keyframe values control where the element will begin
-    and end its trajectory across the screen. Each rule
-    represents a path the element follows across the screen. */
-
-
 @keyframes fly3 {
-
 	98.001%, 0% {
-                display: block;
+    display: block;
     width: 100px;
 		transform: translateX(-200%) translateY(100vh) rotateZ(0deg)
 	}
-
 	15% {
 		transform: translateX(100vw) translateY(-100%) rotateZ(180deg)
 	}
-
 	15.001%, 18% {
 		transform: translateX(100vw) translateY(-30%) rotateZ(0deg)
 	}
-
 	40% {
 		transform: translateX(-200%) translateY(3vh) rotateZ(-180deg)
 	}
-
 	40.001%, 43% {
 		transform: translateX(-200%) translateY(-100%) rotateZ(-180deg)
 	}
-
 	65% {
 		transform: translateX(100vw) translateY(50vh) rotateZ(0deg)
 	}
-
 	65.001%, 68% {
 		transform: translateX(20vw) translateY(-200%) rotateZ(180deg)
 	}
-
 	95% {
 		transform: translateX(10vw) translateY(100vh) rotateZ(0deg)
 	}
@@ -216,11 +209,9 @@ button {
 	pointer-events: none;
   width: 10px;
 }
-
 .flier4 > * {
-/* Adjust animation duration to change the element’s speed */
-        animation: fly4 50s linear infinite;
-        pointer-events: none !important;
+  animation: fly4 50s linear infinite;
+  pointer-events: none !important;
 	top: 0;
 	left: 0;
 	transform: translateX(-120%) translateY(-120%) rotateZ(0);
@@ -228,44 +219,30 @@ button {
 	animation-delay: 12s;
 	z-index: 100;
 }
-
- /* Keyframe values control where the element will begin
-    and end its trajectory across the screen. Each rule
-    represents a path the element follows across the screen. */
-
-
 @keyframes fly4 {
-
 	98.001%, 0% {
-                display: block;
+    display: block;
     width: 100px;
 		transform: translateX(-200%) translateY(10vh) rotateZ(0deg)
 	}
-
 	15% {
 		transform: translateX(100vw) translateY(2300%) rotateZ(180deg)
 	}
-
 	15.001%, 18% {
 		transform: translateX(100vw) translateY(-34%) rotateZ(0deg)
 	}
-
 	40% {
 		transform: translateX(-200%) translateY(32vh) rotateZ(-180deg)
 	}
-
 	40.001%, 43% {
 		transform: translateX(-200%) translateY(-42%) rotateZ(-180deg)
 	}
-
 	65% {
 		transform: translateX(100vw) translateY(-26vh) rotateZ(0deg)
 	}
-
 	65.001%, 68% {
 		transform: translateX(20vw) translateY(-200%) rotateZ(180deg)
 	}
-
 	95% {
 		transform: translateX(10vw) translateY(100vh) rotateZ(0deg)
 	}
@@ -274,11 +251,9 @@ button {
 	pointer-events: none;
   width: 10px;
 }
-
 .flierpie > * {
-/* Adjust animation duration to change the element’s speed */
-        animation: flypie 50s linear;
-        pointer-events: none !important;
+  animation: flypie 50s linear;
+  pointer-events: none !important;
 	top: 0;
 	left: 0;
 	transform: translateX(-120%) translateY(-120%) rotateZ(0);
@@ -286,58 +261,208 @@ button {
 	animation-delay: 15s;
 	z-index: 100;
 }
-
- /* Keyframe values control where the element will begin
-    and end its trajectory across the screen. Each rule
-    represents a path the element follows across the screen. */
-
-
 @keyframes flypie {
-
 	98.001%, 0% {
-                display: block;
+    display: block;
     width: 100px;
 		transform: translateX(-200%) translateY(100vh) rotateZ(0deg)
 	}
-
 	15% {
 		transform: translateX(100vw) translateY(-100%) rotateZ(180deg)
 	}
-
 	15.001%, 18% {
 		transform: translateX(100vw) translateY(-30%) rotateZ(0deg)
 	}
-
 	40% {
 		transform: translateX(-200%) translateY(3vh) rotateZ(-180deg)
 	}
-
 	40.001%, 43% {
 		transform: translateX(-200%) translateY(-100%) rotateZ(-180deg)
 	}
-
 	65% {
 		transform: translateX(100vw) translateY(50vh) rotateZ(0deg)
 	}
-
 	65.001%, 68% {
 		transform: translateX(20vw) translateY(-200%) rotateZ(180deg)
 	}
-
 	95% {
 		transform: translateX(10vw) translateY(100vh) rotateZ(0deg)
 	}
 }
-#notice { 
+.notice { 
   border-radius: 15px; 
-  padding: 5px; 
+  padding: 0; 
   margin-bottom: 10px;
   animation: blinkingBackground 3s linear infinite;
 }
-
 @keyframes blinkingBackground {  
-  0%		{ background-color: #F1E5AC;}
+  0%		{ background-color: none;}
   30%   { background-color: #FCB44B;}
   70%   { background-color: #FCB44B;}
-  100%  { background-color: #F1E5AC;}
+  100%  { background-color: none;}
+/*   0%		{ background-image: linear-gradient(to bottom, #FCB44B, #ACB8F1);}
+  50%   { background-image: linear-gradient(to bottom, #ACB8F1, #FCB44B);}
+  100%		{ background-image: linear-gradient(to bottom, #FCB44B, #ACB8F1);} */
+}
+.slider {
+  scroll-snap-type: x mandatory;	
+	display: flex;
+	overflow-x: scroll;
+}
+section {
+	padding: 1rem;
+	min-width: 80vw;
+	height: 90vh;
+	scroll-snap-align: start;
+	text-align: center;
+ /* overflow-y: scroll; */
+  border-style: solid;
+  border-color: #642A82;
+  margin-bottom: 10px;
+  margin-right: 20px;
+  border-radius: 15px;
+}
+.loadImage {
+  background-image: url("/img/loadImage.png");
+  height: 100vh; 
+  z-index: 200;
+  padding: 0;
+  margin-top: 0;
+  margin-left: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.coin {
+  width: 100px;
+  position: relative;
+  margin-left: 300px;
+  margin-top: -100px;
+  z-index: -1;
+  display: none;
+}
+#coin {
+  animation: coin 2s ease-out infinite;
+}
+@keyframes coin {
+  from {
+    top: -50px;
+    right: 0px;
+  }
+  to {
+    top: 300px;
+    right: 380px;
+  }
+}
+#coin1 {
+  animation: coin1 2s ease-out infinite;
+}
+@keyframes coin1 {
+  from {
+    top: -50px;
+    left: 0px;
+  }
+  to {
+    top: 300px;
+    left: 380px;
+  }
+}
+#coin2 {
+  animation: coin2 2s ease-out infinite;
+}
+@keyframes coin2 {
+  from {
+    bottom: 50px;
+    right: 0px;
+  }
+  to {
+    bottom: 300px;
+    right: 380px;
+  }
+}
+#coin3 {
+  animation: coin3 2s ease-out infinite;
+}
+@keyframes coin3 {
+  from {
+    bottom: 50px;
+    left: 0px;
+  }
+  to {
+    bottom: 300px;
+    left: 380px;
+  }
+}
+#coin4 {
+  animation: coin4 2s ease-out infinite;
+}
+@keyframes coin4 {
+  from {
+    top: -50px;
+    right: 0px;
+  }
+  to {
+    right: 380px;
+  }
+}
+#coin5 {
+  animation: coin5 2s ease-out infinite;
+}
+@keyframes coin5 {
+  from {
+    top: -50px;
+    left: 0px;
+  }
+  to {
+    left: 380px;
+  }
+}
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+[data-*]{
+  visibility: hidden;
+}
+.slider::-webkit-scrollbar {
+	width: 5px;
+	background-color: none;
+}
+.slider::-webkit-scrollbar-thumb {
+	border-radius: 5px;
+	background-color: #FBB44A;
 }

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-KRPNL55");
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-2N939D6C1C"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-2N939D6C1C");
+    </script>
+
+    <!--CSS-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="icon" type="image/png" href="/img/logo.png" />
+
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Pi Webinars || Create Profile</title>
+  </head>
+  <body>
+    <h1><b>Create your profile so you can enter our draws</b></h1>
+
+    <div class="profile_info">
+      <p class="center-text">Please create a unique handle for your profile...</p>
+    </div>
+
+    <div class="createProfile" id="createProfile">
+          <div class="error_log" id="error_log"></div> <br><br><br><br>
+          <section class="createProfile-content">
+            <form action="/profile" method="POST">
+              <label for="pi_handle">Enter a unique account handle:</label></br>
+              <input id="pi_handle" required /></br></br>
+              <label for="handle">
+              <input type="submit" value="Submit" class="login" id="handle"></input></label></br>
+            </form>
+          </section>
+      </div>
+        <br><br><br>
+
+    <!--Scripts-->
+      <script
+        src="https://kit.fontawesome.com/3aea44e36d.js"
+        crossorigin="anonymous"
+      ></script>
+      <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+      <script src="../js/pages/authentication.js"></script>
+    <script
+      src="https://kit.fontawesome.com/3aea44e36d.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
