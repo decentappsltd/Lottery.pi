@@ -61,6 +61,10 @@ function testPayment() {
 }
 
 function play_one() {
+  if ( navigator.userAgent.toLowerCase().indexOf("pibrowser")<0 ) {
+    alert('Please use the app in the Pi Browser to enter our draw')
+    window.open("pi://www.pi-lottery.co.uk")
+  }
   const authed = sessionStorage.getItem('userSession');
   if (authed == null) {
     alert('Please login first');
@@ -108,6 +112,10 @@ function play_one() {
 }
 
 function play_ten() {
+  if ( navigator.userAgent.toLowerCase().indexOf("pibrowser")<0 ) {
+    alert('Please use the app in the Pi Browser to enter our draw')
+    window.open("pi://www.pi-lottery.co.uk")
+  }
   const authed = sessionStorage.getItem('userSession');
   if (authed == null) {
     alert('Please login first');
