@@ -437,8 +437,8 @@ async function playTen() {
 };
 
 /*********Secret route -- for development page only**********/
-async function drawWinner() {
-  const passkey = prompt('enter passkey:', '');
-  const pass = {key: passkey};
-  const response = await axios.post(`https://pi-lottery.herokuapp.com/play/draw`, pass);
-}
+// async function drawWinner() {
+//   const passkey = prompt('enter passkey:', '');
+//   const pass = {key: passkey};
+//   const response = await axios.post(`https://pi-lottery.herokuapp.com/play/draw`, pass);
+// }
