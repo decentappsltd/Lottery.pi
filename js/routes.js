@@ -59,6 +59,9 @@ if (loginBtn !== null) {
           localStorage.setItem("userSession", token);
           localStorage.setItem("name", username);
           flashMessage = message;
+	  if (navigator.userAgent.toLowerCase().indexOf("pibrowser")>=0) {
+            addUID();
+          }
           window.location.href = "/";
         }
         username = "";
