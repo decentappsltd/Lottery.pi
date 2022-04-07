@@ -37,64 +37,7 @@ async function piLogin() {
   }
 }
 
-async function addUID() {
-  const config = {
-    uid: localStorage.uid,
-  };
-  const authToken = localStorage.getItem("userSession");
-  const response = await axios.post(`https://pi-lottery.herokuapp.com/login/add`, config, {
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${authToken}`,
-    },
-  });
-  if (response.status === 200) {
-    alert("Pi account linked to Lottery.pi");
-  };
-}
-
 auth();
-
-function testPayment() {
-  alert('initiating payment');
-  const payment = Pi.createPayment(
-  {
-    amount: 1,
-    memo: "testing",
-    metadata: { paymentType: "testing" }
-  },
-  {
-    onReadyForServerApproval: function (paymentId) {
-      var data = {
-        paymentId: paymentId,
-        txid: "",
-      };
-      axios.post("https://pi-lottery.herokuapp.com/payment/approve", data)
-    },
-    onReadyForServerCompletion: function (paymentId, txid) {
-      var data = {
-        paymentId: paymentId,
-        txid: txid,
-      };
-      axios.post("https://pi-lottery.herokuapp.com/payment/complete", data)
-    },
-    onCancel: function (paymentId, txid) {
-      var data = {
-        paymentId: paymentId,
-        txid: txid,
-      };
-      axios.post("https://pi-lottery.herokuapp.com/payment/incomplete", data);
-    },
-    onError: function (paymentId, txid) {
-      var data = {
-        paymentId: paymentId,
-        txid: txid,
-      };
-      axios.post("https://pi-lottery.herokuapp.com/payment/incomplete", data);
-    }
-  }
-);
-}
 
 function play_one() {
   if ( navigator.userAgent.toLowerCase().indexOf("pibrowser")<0 ) {

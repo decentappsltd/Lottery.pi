@@ -38,6 +38,7 @@ if (loginBtn !== null) {
     e.preventDefault();
     let username = document.querySelector("#pi_username").value;
     let password = document.querySelector("#user_password").value;
+    let uid = localStorage.uid;
 
     try {
       if ((username || password) === "") {
@@ -47,6 +48,7 @@ if (loginBtn !== null) {
         const user = {
           username,
           password,
+          uid,
         };
         const response = await instance.post(`/login`, user);
         if (response.status === 200) {
@@ -59,9 +61,6 @@ if (loginBtn !== null) {
           localStorage.setItem("userSession", token);
           localStorage.setItem("name", username);
           flashMessage = message;
-	  if (navigator.userAgent.toLowerCase().indexOf("pibrowser")>=0) {
-            addUID();
-          }
           window.location.href = "/";
         }
         username = "";
@@ -438,10 +437,3 @@ async function playTen() {
 	  alert("You've entered!");
   }
 };
-
-/*********Secret route -- for development page only**********/
-// async function drawWinner() {
-//   const passkey = prompt('enter passkey:', '');
-//   const pass = {key: passkey};
-//   const response = await axios.post(`https://pi-lottery.herokuapp.com/play/draw`, pass);
-// }
