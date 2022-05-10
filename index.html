@@ -1,110 +1,153 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <!--Google Analytics-->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-3FS6H7R7X5"></script>
   <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-3FS6H7R7X5');
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'G-3FS6H7R7X5');
   </script>
-  
+
   <!--Load Dependencies-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/styles.css">
   <script src="https://sdk.minepi.com/pi-sdk.js"></script>
-  <script src="/js/routes.js"></script>
-  <script src="/js/pipayment.js"></script>
-  <link rel="icon" type="image/png" href="../img/logo.png">  
+  <link rel="icon" type="image/png" href="../img/logo.png">
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  
+
   <!--Google Fonts-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;700&display=swap" rel="stylesheet">
 </head>
-  
+
 <body>
-  <img src="/img/loadImage.png" class="loadImage" id="loadImage"></img>  
+  <img src="/img/loadImage.png" class="loadImage" id="loadImage"></img>
   <div class="slider">
-    
+
     <!--Section One-->
     <section id="sectionOne">
       <img onclick="drawWinner()" id="title" width="250" src="/img/logo.png"></img>
- 
-    <div id="last-draw">
-      <h3 style="margin-top: 30px;">This week's pool:</h3>
-      <h2 id="pool" style="margin-top: -10px;">loading...</h2>
-    </div>
 
-      <h3 style="margin-top:-20px;">Play our weekly draw: </h3>
-    <div style="position: relative; right: 22vw; top: 17px;">
-      <img class="button_click" onclick="play_one()" src="/img/Oneticket.png" style="width: 150px; margin-top: -50px; margin-bottom: -30px;"></img>
-    <h2>1π</h2>
+      <div id="last-draw">
+        <h3 style="margin-top: 30px; text-shadow: 2px 2px #ACB8F1;">This week's pool:</h3>
+        <h2 id="pool" style="margin-top: -10px;">loading...</h2>
+      </div>
+
+      <h3 style="margin-top:-20px; text-shadow: 2px 2px #ACB8F1;">Play our weekly draw: </h3>
+      <div style="position: relative; right: 22vw; top: 17px;">
+        <img class="button_click" onclick="play_one()" src="/img/Oneticket.png" style="width: 150px; margin-top: -50px; margin-bottom: -30px;"></img>
+        <h2>1π</h2>
+      </div>
+
+      <div style="position: relative; left: 22vw; top: -120px;">
+        <img class="play_ten" onclick="play_ten()" src="/img/Tentickets.png" style="width: 150px; margin-top: -50px; margin-bottom: -30px;"></img>
+        <h2>8π</h2>
+      </div>
+
+    </section>
+
+    <!--Section Two-->
+    <section id="sectionTwo">
+      <h2 id="wintitle" style="text-shadow: 2px 2px #ACB8F1;">My Winnings</h2>
+      <h3 id="displayUserHandle">
+        </h2>
+        <h1 id="my_credit">Please login</h1>
+        <button style="width: 65vw;" onclick="withdraw()" id="withdraw">Withdraw Pi</button></br>
+        <button style="width: 65vw;" onclick="location.href='#sectionOne'">Play to Win!</button></br>
+
+        <button class="user unAuth" onclick="window.location.href = '/html/login.html'">Login/logout</button>
+        <button class="user unAuth" onclick="window.location.href = '/html/register.html'">Register</button>
+
+        <button class="user auth" id="logout">Logout</button>
+        <button class="user auth" id="logoutAll">Logout All</button>
+
+        <img id="coin" class="coin" src="/img/pi-logo.png"></img>
+        <img id="coin1" class="coin" src="/img/pi-logo.png"></img>
+        <img id="coin2" class="coin" src="/img/pi-logo.png"></img>
+        <img id="coin3" class="coin" src="/img/pi-logo.png"></img>
+        <img id="coin4" class="coin" src="/img/pi-logo.png"></img>
+        <img id="coin5" class="coin" src="/img/pi-logo.png"></img>
+    </section>
+
+    <!--Section Three-->
+    <section id="sectionFour">
+      <!--     <div onclick="location.href='/html/winners.html'"> -->
+      <h3 style="margin-top: 10px; text-shadow: 2px 2px 2px #ACB8F1;">Last week's winner was:<h2 id="lastWinner" class="gap">loading...</h2>
+      </h3>
+      <!--     </div> -->
+
+      <h3 style="text-shadow: 2px 2px 2px #ACB8F1; border-top: solid #fbb44a 2px; padding-top: 10px; margin-top: 40px;">Meet our Charitable Partners!</h3>
+      <div class="border" style="text-align: center; ">
+        <p2 style="padding: 5px;">At open mainnet, all pooled Pi will be converted to fiat currency and donated to a registered charity. Players will soon be able to vote for their favourite charity.</p2>
+      </div>
+      <h3 style="text-shadow: 2px 2px #ACB8F1;">Charity Pool:</h3>
+      <h2 style="margin-top: -10px;" id="charityTotal">loading...</h2>
+      <button onclick="location.href='/html/charity.html'" class="see-all">See All</button>
+    </section>
+
+    <!--Section Four-->
+    <section id="sectionThree">
+
+      <div style="padding: 10px; text-align: justify;">
+        <h3 style="margin-top: -5px; text-shadow: 2px 2px #ACB8F1;">About Us:</h3>
+        <p3>Lottery.pi, the world’s first online lottery app that draws on the power of Pi, intends to hold one lottery draw every week as it promises to change lives. To put power in the hands of everyday people. And to provide everyday people – Pioneers – with a reason to believe their dreams can come true.</p3>
+      </div>
+
+      <div class="notice">
+        <h3>Receive an 80% payout!</h3>
+        <h3>10% goes to charitable causes!</h3>
+      </div>
+      <br><br>
+      <h5>&copy; Decent Apps Ltd</h5>
+    </section>
+
   </div>
-    
-  <div style="position: relative; left: 22vw; top: -120px;">
-		  <img class="play_ten" onclick="play_ten()" src="/img/Tentickets.png" style="width: 150px; margin-top: -50px; margin-bottom: -30px;"></img>
-  <h2>8π</h2>
-  </div>
-		<div class="notice" style="margin-top:-100px;">
-      <h3>Receive an 80% payout!</h3>
-      <h3>10% goes to charitable causes!</h3>
+
+<!-- Modal -->
+<div class="modal" id="info">
+      <div class="modal-dialog">
+        <header style="color: #b44afb" class="modal-header">
+          <h3>Welcome to Lottery.pi</h3>
+            <button class="close-modal" style="float: right;" onclick="closeInfo()">✕</button>
+          
+        </header>
+        <div class="modal-content">
+          <h4>What is Lottery.pi?</h4><br>
+          <p3> Lottery.pi is the brainchild of the same team of Pioneers built Pi Webinars. It's the world’s first online lottery app that draws on the power of Pi, intends to hold one lottery draw every week as it promises to change lives. To put power in the hands of everyday people. And to provide everyday people – Pioneers – with a reason to believe their dreams can come true. </p3><br><br><br>
+
+          <h4>How to enter:</h4><br>
+          <ol>
+            <li>
+              Choose the amount of tickets that you wish to buy. You may buy tickets individually for 1 Pi each, or buy ten for 8 Pi. 
+            </li>
+            <li>
+              Click the respective 'Play' button and complete the Pi payment flow. Ensure you are using the Pi Browser for this.
+            </li>
+            <li>
+              You have now entered. You should see the prize pool has increased now that you have contributed and the winner will be drawn at the end of each week. Good luck!
+            </li>
+          </ol><br><br>
+
+          <h4>Verify the fairness of our app- check out our source code here:</h4><br>
+          <a href="https://github.com/decentappsltd/Lottery.pi">Frontend Github repository</a><br>
+          <a href="https://github.com/decentappsltd/Lottery.pi-backend">Backend Github repository</a>
+
+        </div>
+      </div>
     </div>
-        
-		  </section>
 
-  <!--Section Two-->
-  <section id="sectionTwo">
-    <h2 id="wintitle">My Winnings</h2>
-    <h3 id="displayUserHandle"></h2>
-    <h1 id="my_credit">Please login</h1>
-    <button style="width: 65vw;" onclick="withdraw()" id="withdraw">Withdraw Pi</button></br>
-    <button style="width: 65vw;" onclick="location.href='#sectionOne'">Play to Win!</button></br>
-
-    <button class="user" onclick="window.location.href = '/html/login.html'">Login/logout</button>
-    <button class="user" onclick="window.location.href = '/html/register.html'">Register</button>
-
-    <img id="coin" class="coin" src="/img/pi-logo.png"></img>
-    <img id="coin1" class="coin" src="/img/pi-logo.png"></img>
-    <img id="coin2" class="coin" src="/img/pi-logo.png"></img>
-    <img id="coin3" class="coin" src="/img/pi-logo.png"></img>
-    <img id="coin4" class="coin" src="/img/pi-logo.png"></img>
-    <img id="coin5" class="coin" src="/img/pi-logo.png"></img>
-  </section>
-
- <!--Section Three-->
-  <section id="sectionFour">
-<!--     <div onclick="location.href='/html/winners.html'"> -->
-      <h3 style="color: #FCB44B; background: #642A82; margin-top: 10px; border-radius: 5px;">Last week's winner was:<h2 id="lastWinner" class="gap">loading...</h2></h3>
-<!--     </div> -->
-    
-    <h3 style="background: #FCB44B; border-radius: 5px; margin-top: 50px;">Meet our Charitable Partners!</h3>
-    <div class="border" style="text-align: center; ">
-      <p2 style="padding: 5px;">At open mainnet, all pooled Pi will be converted to fiat currency and donated to a registered charity. Players will soon be able to vote for their favourite charity.</p2>
+    <!--   Floating tab -->
+    <div id="float">
+      <a style="font-size:24px" class="fa" onclick="openInfo()">&#xf05a;</a>
     </div>
-    <h3>Charity Pool:</h3>
-    <h2 style="margin-top: -10px;" id="charityTotal">loading...</h2>
-    <button onclick="location.href='/html/charity.html'" class="see-all">See All</button>
-   </section>
-  
-  <!--Section Four-->
-  <section id="sectionThree">
-<!--     <div class="notice">
-      <h3>Receive an 80% payout!</h3>
-      <h3>10% goes to charitable causes!</h3>
-    </div> -->
-    
-    <div style="padding: 10px; text-align: justify;">
-      <h3 style="margin-top: -5px;">About Us:</h3>
-      <p3>Lottery.pi, the world’s first online lottery app that draws on the power of Pi, the cryptocurrency of everyday people, is poised to generate greater contributions to charitable causes and provide substantial economic boost to the Pi blockchain from revenue expected to be generated from the massive sale of lottery tickets. Lottery.pi intends to hold one lottery draw every week, as it promises to change lives. To put power in the hands of everyday people. And to provide everyday people – Pioneers – with a reason to believe their dreams can come true.</p3>
-    </div>
-    <h5>&copy; Decent Apps Ltd</h5>
-  </section>
 
-   </div>  
-  
   <!--Fliers-->
   <div class="flier a">
     <img src="/img/pi-logo.png"></img>
@@ -125,23 +168,29 @@
     <img src="/img/pie.png"></img>
   </div>
 
+  <!-- Scripts -->
+  <script src="/js/routes.js"></script>
+  <script src="/js/pipayment.js"></script>
+  <script src="https://kit.fontawesome.com/3aea44e36d.js" crossorigin="anonymous"></script>
   <script>
-      myProfile();
-      renderTotals();
-      let image = sessionStorage.getItem("image");
-      if (image != 'true') {
-        const loadTimeout = setTimeout(loadImage, 1500);
-        sessionStorage.setItem("image", "true");
-        if (confirm('Confirm that unregistered casinos are legal in your location and that you are of legal age..') == false) {
-          location.href = '/html/error.html';
-        }
-      } else {
-        loadImage()
+    myProfile();
+    renderTotals();
+    let image = sessionStorage.getItem("image");
+    if (image != 'true') {
+      const loadTimeout = setTimeout(loadImage, 1500);
+      sessionStorage.setItem("image", "true");
+      if (confirm('Confirm that unregistered casinos are legal in your location and that you are of legal age..') == false) {
+        location.href = '/html/error.html';
       }
-      function loadImage() {
-        var l = document.getElementById("loadImage");
-        l.style.display = "none";
-      }
-    </script>
-  </body>
+    } else {
+      loadImage()
+    }
+
+    function loadImage() {
+      var l = document.getElementById("loadImage");
+      l.style.display = "none";
+    }
+  </script>
+</body>
+
 </html>

@@ -2,6 +2,7 @@ body {
   text-align: center;
   background: #F1E5AC;
   background-image: linear-gradient(to bottom right, #F1E5AC, #F1E5AC, #ACB8F1);
+/*   background-image: linear-gradient(to bottom, #cfcfcf, #fffffe); */
   color: #642A82;
   font-family: 'Comfortaa', cursive;
   overflow-y: hidden;
@@ -23,7 +24,7 @@ iframe {
   margin-right: auto;
   margin-top: 10px;
 }
-button {
+button, #login {
   margin-bottom: 20px;
   background-color: #FCB44B;
   color: #642A82;
@@ -32,6 +33,10 @@ button {
   font-weight: bold;
   border-radius: 15px;
   border: solid;
+}
+#login {
+  padding: 5px;
+  font-size: 15px;
 }
 .border {
   border-style: solid;
@@ -79,6 +84,66 @@ button {
   font-size: 20px;
   border-radius: 5px;
   margin-top: 50px;
+}
+.auth {
+  display: none;
+  margin-top: 0px;
+  font-size: 12px;
+}
+#float {
+  position: fixed;
+	bottom: 15px;
+	right: 15px;
+	background-color: #fff;
+	color: #000;
+	border-radius:20px;
+  text-align: center;
+  padding: 1px;
+  margin: auto;
+	box-shadow: 2px 2px 30px #000;
+}
+.fa {
+  marign: auto;
+  padding: 3px;
+}
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 20px;
+  text-align: justify;
+  justify-content: center;
+  background: var(--black);
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.35s ease-in;
+  z-index: 200;
+  overflow: scroll;
+}
+.is-visible {
+  visibility: visible;
+  opacity: 1;
+  background: #ffffff;
+}
+.modal-dialog {
+  width: 95%;
+  background: var(--white);
+}
+.modal-dialog > * {
+  padding: 20px;
+}
+.modal-header {
+  background: var(--lightgray);
+}
+.modal-header {
+/*   display: flex; */
+  align-items: center;
+  justify-content: space-between;
+}
+.close-modal {
+  float: right;
 }
 .button_click:active, .play_ten:active, button:active {
   transform: translate(2px, 5px);
@@ -459,10 +524,17 @@ section {
   visibility: hidden;
 }
 .slider::-webkit-scrollbar {
-	width: 5px;
+	height: 10px;
 	background-color: none;
 }
 .slider::-webkit-scrollbar-thumb {
 	border-radius: 5px;
 	background-color: #FBB44A;
+}
+.close-modal {
+  padding: 3px;
+  font-size: 25px;
+  background: none;
+  border: none;
+  margin-top: -50px;
 }

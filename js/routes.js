@@ -32,6 +32,17 @@ const instance = axios.create({
   credentials: "same-origin",
 });
 
+if (sessToken !== null) {
+  const unAuth = document.querySelectorAll(".unAuth");
+  const auth = document.querySelectorAll(".auth");
+  for (const item of unAuth) {
+    item.style.display = "none";
+  };
+  for (const item of auth) {
+    item.style.display = "inline-block";
+  };
+}
+
 // Login a user
 if (loginBtn !== null) {
   loginBtn.addEventListener("click", async (e) => {
@@ -437,3 +448,12 @@ async function playTen() {
 	  alert("You've entered!");
   }
 };
+
+// Modals
+function openInfo() {
+  document.getElementById("info").classList.add("is-visible");
+}
+
+function closeInfo() {
+  document.getElementById("info").classList.remove("is-visible");
+}
