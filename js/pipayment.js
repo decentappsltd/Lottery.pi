@@ -90,8 +90,9 @@ function play_one() {
         paymentId: paymentId,
         txid: txid,
         entry,
+        amount: "1",
       };
-      axios.post("https://pi-lottery-dev.herokuapp.com/payment/complete", data);
+      axios.post("https://pi-lottery.herokuapp.com/payment/complete", data);
       const loadTimeout = setTimeout(renderTotals, 5000);
     },
     onCancel: function (paymentId, txid) {
@@ -137,12 +138,14 @@ function play_ten() {
       axios.post("https://pi-lottery.herokuapp.com/payment/approve", data)
     },
     onReadyForServerCompletion: function (paymentId, txid) {
+      const entry = {user: localStorage.getItem("name")};
       var data = {
         paymentId: paymentId,
         txid: txid,
+        entry,
+        amount: "8",
       };
       axios.post("https://pi-lottery.herokuapp.com/payment/complete", data);
-      playTen();
       const loadTimeout = setTimeout(renderTotals, 5000);
     },
     onCancel: function (paymentId, txid) {
