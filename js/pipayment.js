@@ -85,12 +85,13 @@ function play_one() {
       axios.post("https://pi-lottery.herokuapp.com/payment/approve", data)
     },
     onReadyForServerCompletion: function (paymentId, txid) {
+      const entry = {user: localStorage.getItem("name")};
       var data = {
         paymentId: paymentId,
         txid: txid,
+        entry,
       };
       axios.post("https://pi-lottery.herokuapp.com/payment/complete", data);
-      playOne();
       const loadTimeout = setTimeout(renderTotals, 5000);
     },
     onCancel: function (paymentId, txid) {
