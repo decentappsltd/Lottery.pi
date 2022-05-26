@@ -91,7 +91,7 @@ function play_one() {
         txid: txid,
         entry,
       };
-      axios.post("https://pi-lottery.herokuapp.com/payment/complete", data);
+      axios.post("https://pi-lottery-dev.herokuapp.com/payment/complete", data);
       const loadTimeout = setTimeout(renderTotals, 5000);
     },
     onCancel: function (paymentId, txid) {
