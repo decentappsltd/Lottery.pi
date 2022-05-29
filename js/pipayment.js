@@ -85,7 +85,7 @@ function play_one() {
       axios.post("https://pi-lottery.herokuapp.com/payment/approve", data)
     },
     onReadyForServerCompletion: function (paymentId, txid) {
-      const entry = {user: localStorage.getItem("username")};
+      const entry = {user: sessionStorage.getItem("username")};
       var data = {
         paymentId: paymentId,
         txid: txid,
@@ -138,7 +138,7 @@ function play_ten() {
       axios.post("https://pi-lottery.herokuapp.com/payment/approve", data)
     },
     onReadyForServerCompletion: function (paymentId, txid) {
-      const entry = {user: localStorage.getItem("username")};
+      const entry = {user: sessionStorage.getItem("username")};
       var data = {
         paymentId: paymentId,
         txid: txid,
