@@ -71,6 +71,7 @@ if (loginBtn !== null) {
           sessionStorage.setItem("userSession", token);
           localStorage.setItem("userSession", token);
           localStorage.setItem("name", username);
+          sessionStorage.setItem("username", username);
           flashMessage = message;
           window.location.href = "/";
         }
