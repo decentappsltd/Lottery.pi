@@ -66,7 +66,7 @@ function play_one() {
     alert('Please use the app in the Pi Browser to enter our draw')
     window.open("pi://www.pi-lottery.co.uk")
   }
-  const authed = sessionStorage.getItem('userSession');
+  const authed = sessionStorage.username;
   if (authed == null) {
     alert('Please login first');
   } else {
@@ -85,7 +85,7 @@ function play_one() {
       axios.post("https://pi-lottery.herokuapp.com/payment/approve", data)
     },
     onReadyForServerCompletion: function (paymentId, txid) {
-      const entry = {user: localStorage.getItem("name")};
+      const entry = {user: localStorage.getItem("username")};
       var data = {
         paymentId: paymentId,
         txid: txid,
@@ -119,7 +119,7 @@ function play_ten() {
     alert('Please use the app in the Pi Browser to enter our draw')
     window.open("pi://www.pi-lottery.co.uk")
   }
-  const authed = sessionStorage.getItem('userSession');
+  const authed = sessionStorage.username;
   if (authed == null) {
     alert('Please login first');
   } else {
@@ -138,7 +138,7 @@ function play_ten() {
       axios.post("https://pi-lottery.herokuapp.com/payment/approve", data)
     },
     onReadyForServerCompletion: function (paymentId, txid) {
-      const entry = {user: localStorage.getItem("name")};
+      const entry = {user: localStorage.getItem("username")};
       var data = {
         paymentId: paymentId,
         txid: txid,
@@ -170,9 +170,3 @@ function play_ten() {
 function withdraw() {
   alert('Feature not made available in Pi SDK yet..');
 };
-
-// async function won() {
-//   alert('Congratulations!!! You have won a draw!!!');
-//   document.getElementsByClassName('coin').style.display = 'block';
-//   document.getElementsByClassName('a').style.display = 'none';
-// }
