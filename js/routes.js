@@ -23,7 +23,7 @@ const divDom = document.createElement("div");
 const authToken = localStorage.getItem("userSession");
 const sessToken = sessionStorage.getItem("userSession");
 const instance = axios.create({
-  baseURL: "https://pi-lottery.herokuapp.com",
+  baseURL: "https://pi-lottery.onrender.com",
   headers: {
     "Access-Control-Allow-Origin": "*",
     Authorization: `Bearer ${authToken}`,
@@ -259,7 +259,7 @@ async function myProfile() {
   const authToken = localStorage.getItem("userSession");
 
   try {
-    const response = await axios.get(`https://pi-lottery.herokuapp.com/profile`, {
+    const response = await axios.get(`https://pi-lottery.onrender.com/profile`, {
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${authToken}`,
@@ -286,7 +286,7 @@ async function renderTotals() {
   const lastWinner = document.querySelector("#lastWinner");
   const elem = document.createElement("i");
   
-  const response = await axios.get(`https://pi-lottery.herokuapp.com/play/totals`);
+  const response = await axios.get(`https://pi-lottery.onrender.com/play/totals`);
   if (response.status === 200 || 304) {
     pool.textContent = `${response.data.totals.thisWeek} π`;
     charityTotal.textContent = `${response.data.totals.charity}`;
@@ -421,34 +421,6 @@ if (deleteAccountBtn !== null) {
     }
   });
 }
-
-async function playOne() {
-  const authToken = localStorage.getItem("userSession");
-  const userHandle = {user: localStorage.getItem("name")};
-  const response = await axios.post(`https://pi-lottery.herokuapp.com/play/one`, userHandle, {
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${authToken}`,
-    },
-  });
-  if (response.status == 200) {
-	  alert("You've entered!");
-  }
-};
-
-async function playTen() {
-  const authToken = localStorage.getItem("userSession");
-  const userHandle = {user: localStorage.getItem("name")};
-  const response = await axios.post(`https://pi-lottery.herokuapp.com/play/ten`, userHandle, {
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${authToken}`,
-    },
-  });
-  if (response.status == 200) {
-	  alert("You've entered!");
-  }
-};
 
 // Modals
 function openInfo() {

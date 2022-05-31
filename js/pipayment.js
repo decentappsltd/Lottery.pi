@@ -9,7 +9,7 @@ async function auth() {
       txid: payment.transaction.txid
     };
     axios.post(
-      "https://pi-lottery.herokuapp.com/payment/incomplete",
+      "https://pi-lottery.onrender.com/payment/incomplete",
       data
     );
   }
@@ -32,7 +32,7 @@ async function piLogin() {
       uid: localStorage.uid
     };
     const response = await axios.post(
-      `https://pi-lottery.herokuapp.com/login/pi`,
+      `https://pi-lottery.onrender.com/login/pi`,
       config
     );
     if (response.status === 200 || response.status === 201) {
@@ -82,7 +82,7 @@ function play_one() {
         paymentId: paymentId,
         txid: "",
       };
-      axios.post("https://pi-lottery.herokuapp.com/payment/approve", data)
+      axios.post("https://pi-lottery.onrender.com/payment/approve", data)
     },
     onReadyForServerCompletion: function (paymentId, txid) {
       const entry = {user: sessionStorage.getItem("username")};
@@ -92,7 +92,7 @@ function play_one() {
         entry,
         amount: "1",
       };
-      axios.post("https://pi-lottery.herokuapp.com/payment/complete", data);
+      axios.post("https://pi-lottery.onrender.com/payment/complete", data);
       const loadTimeout = setTimeout(renderTotals, 5000);
     },
     onCancel: function (paymentId, txid) {
@@ -100,14 +100,14 @@ function play_one() {
         paymentId: paymentId,
         txid: txid,
       };
-      axios.post("https://pi-lottery.herokuapp.com/payment/incomplete", data);
+      axios.post("https://pi-lottery.onrender.com/payment/incomplete", data);
     },
     onError: function (paymentId, txid) {
       var data = {
         paymentId: paymentId,
         txid: txid,
       };
-      axios.post("https://pi-lottery.herokuapp.com/payment/incomplete", data);
+      axios.post("https://pi-lottery.onrender.com/payment/incomplete", data);
     }
   }
 );
@@ -135,7 +135,7 @@ function play_ten() {
         paymentId: paymentId,
         txid: "",
       };
-      axios.post("https://pi-lottery.herokuapp.com/payment/approve", data)
+      axios.post("https://pi-lottery.onrender.com/payment/approve", data)
     },
     onReadyForServerCompletion: function (paymentId, txid) {
       const entry = {user: sessionStorage.getItem("username")};
@@ -145,7 +145,7 @@ function play_ten() {
         entry,
         amount: "8",
       };
-      axios.post("https://pi-lottery.herokuapp.com/payment/complete", data);
+      axios.post("https://pi-lottery.onrender.com/payment/complete", data);
       const loadTimeout = setTimeout(renderTotals, 5000);
     },
     onCancel: function (paymentId, txid) {
@@ -153,14 +153,14 @@ function play_ten() {
         paymentId: paymentId,
         txid: txid,
       };
-      axios.post("https://pi-lottery.herokuapp.com/payment/incomplete", data);
+      axios.post("https://pi-lottery.onrender.com/payment/incomplete", data);
     },
     onError: function (paymentId, txid) {
       var data = {
         paymentId: paymentId,
         txid: txid,
       };
-      axios.post("https://pi-lottery.herokuapp.com/payment/incomplete", data);
+      axios.post("https://pi-lottery.onrender.com/payment/incomplete", data);
     }
   }
 );
@@ -170,3 +170,9 @@ function play_ten() {
 function withdraw() {
   alert('Feature not made available in Pi SDK yet..');
 };
+
+// async function won() {
+//   alert('Congratulations!!! You have won a draw!!!');
+//   document.getElementsByClassName('coin').style.display = 'block';
+//   document.getElementsByClassName('a').style.display = 'none';
+// }
