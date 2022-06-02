@@ -255,6 +255,7 @@ async function createProfile(handle) {
 async function myProfile() {
   const userHandle = document.querySelector("#displayUserHandle");
   const credit = document.querySelector("#my_credit");
+  const ticketAmount = document.querySelector("#ticketAmount");
   const elem = document.createElement("i");
   const authToken = localStorage.getItem("userSession");
 
@@ -270,6 +271,11 @@ async function myProfile() {
       elem.textContent = `pi`;
       credit.appendChild(elem);
       userHandle.textContent = `@${response.data.profile.handle}`;
+      if (response.data.profile.tickets === undefined) {
+        ticketAmount.textContent = "0";
+      } else {
+        ticketAmount.textContent = response.data.profile.tickets;
+      }
       // if (response.data.profile.won == true) {
       //   won();
       // }
@@ -420,6 +426,12 @@ if (deleteAccountBtn !== null) {
       }, flashTime);
     }
   });
+}
+
+async function drawWinner() {
+  const passkey = prompt('enter passkey:', '');
+  const pass = {key: passkey};
+  const response = await axios.post(`https://pi-lottery.onrender.com/play/draw`, pass);
 }
 
 // Modals
