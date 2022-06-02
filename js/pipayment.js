@@ -92,7 +92,7 @@ function play_one() {
         entry,
         amount: "1",
       };
-      axios.post("https://pi-lottery.onrender.com/payment/complete", data);
+      axios.post("https://pi-lottery-dev.herokuapp.com/payment/complete", data);
       const loadTimeout = setTimeout(renderTotals, 5000);
     },
     onCancel: function (paymentId, txid) {
