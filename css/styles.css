@@ -516,6 +516,42 @@ section {
   to {opacity: 1}
 }
 
+.consent {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  background: #030303;
+  text-align: left;
+  color: white;
+  font-size: 14px;
+  padding: 10px;
+}
+
+.consent a {
+  color: #b44afb;
+}
+
+#acceptCookies, #declineCookies {
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  margin-left: 25px;
+  border-radius: 100px;
+}
+
+#acceptCookies {
+  font-size: 14px;
+  background: green;
+}
+
+#declineCookies {
+  font-size: 14px;
+  background: red;
+}
+
 /* On smaller screens, decrease text size */
 @media only screen and (max-width: 300px) {
   .prev, .next,.text {font-size: 11px}
