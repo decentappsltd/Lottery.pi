@@ -2,7 +2,7 @@ const Pi = window.Pi;
 Pi.init({ version: "2.0" });
 
 async function auth() {
-  const scopes = ["username", "payments"];
+  const scopes = ["username", "payments", "wallet_address"];
   function onIncompletePaymentFound(payment) {
     var data = {
       paymentId: payment.identifier,
