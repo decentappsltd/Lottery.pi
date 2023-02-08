@@ -229,7 +229,7 @@
     if (image != 'true') {
       const loadTimeout = setTimeout(loadImage, 1500);
       sessionStorage.setItem("image", "true");
-      if (confirm('Confirm that unregistered casinos are legal in your location and that you are of legal age..') == false) {
+      if (confirm('Confirm that unregistered casinos are legal in your location and that you are of legal age.') == false) {
         location.href = '/html/error.html';
       }
     } else {
